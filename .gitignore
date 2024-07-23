@@ -55,6 +55,13 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+# ETC
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+
+
 ### C++ ###
 # Prerequisites
 
