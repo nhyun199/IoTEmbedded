@@ -220,7 +220,7 @@ void main()
 	//		printf("%d\n", i);
 	//}
 
-	int N, M;
+	/*int N, M;
 	int A[100][100], B[100][100];
 	scanf_s("%d %d", &N, &M);
 
@@ -243,6 +243,15 @@ void main()
 			printf("%d ", A[i][j] + B[i][j]);
 		}
 		printf("\n");
-	}
-	 //
+	}*/
+
+	/*char X;
+	scanf_s("%c", &X);
+	printf("%d", X);*/
+		
+	/*char* apszData[] = { "Test", "String", "Data" };
+	char szBuffer[128] = { 0 };
+	int i = 0, nOffset = 0;*/
+	
+	
 }
