@@ -3,9 +3,19 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdbool.h>
+#include <string.h>
+#include "../LibTest/LibTest.h"
 
 #define LOTTO_MAX_NUM 45
 #define LOTTO_NUM_COUNT 6
+#define TRIALS 1000000
+
+int AtSign(int A, int B)
+{
+	int C;
+	C = (A + B) * (A - B);
+	return C;
+}
 
 void generateLottoNumbers(int* lottoNumbers, int count)
 {
@@ -253,5 +263,131 @@ void main()
 	char szBuffer[128] = { 0 };
 	int i = 0, nOffset = 0;*/
 	
+	// 몬테카를로 시뮬레이션
+	/*int cnt[13] = { 0 };
+	int rand_min = 1;
+	int rand_max = 6;
+	int dice;
+	int randnum; 
+
+	srand(time(0));
+
+	for (int i = 0; i < TRIALS; i++)
+	{
+		dice = (rand() % (rand_max - rand_min + 1)) + rand_min;
+		randnum = (rand() % (rand_max - rand_min + 1)) + rand_min;
+		dice += randnum;
+		cnt[dice]++;
+	}
+
+	for (int i = 2; i < 13; i++)
+	{
+		printf("합이 %d가 나올 확률은 %.5f%%입니다.\n", i, (double)cnt[i] / TRIALS * 100);
+	}*/
+	
+	/*char grade;
+	char sign;
+
+	scanf_s("%c", &grade);
+	if (grade == 'F')
+	{
+		printf("0.0");
+		return 0;
+	}
+
+	scanf_s("%c", &sign);
+
+	switch (grade)
+	{
+	case 'A' :
+		switch (sign)
+		{
+		case '+' :
+			printf("4.3");
+			break;
+		case '0' :
+			printf("4.0");
+			break;
+		case '-' :
+			printf("3.7");
+			break;
+		}
+		break;
+	case 'B':
+		switch (sign)
+		{
+		case '+':
+			printf("3.3");
+			break;
+		case '0':
+			printf("3.0");
+			break;
+		case '-':
+			printf("2.7");
+			break;
+		}
+		break;
+	case 'C':
+		switch (sign)
+		{
+		case '+':
+			printf("2.3");
+			break;
+		case '0':
+			printf("2.0");
+			break;
+		case '-':
+			printf("1.7");
+			break;
+		}
+		break;
+	case 'D':
+		switch (sign)
+		{
+		case '+':
+			printf("1.3");
+			break;
+		case '0':
+			printf("1.0");
+			break;
+		case '-':
+			printf("0.7");
+			break;
+		}
+		break;
+	}*/
+
+	/*char S[1001];
+	int i;
+
+	scanf("%s", S);
+	scanf("%d", &i);
+
+	printf("%c", S[i-1]);*/
+
+	/*int T;
+	char S[1001];
+	
+	scanf("%d", &T);
+
+	for (int i = 0; i < T; i++)
+	{
+		scanf("%s", S);
+		int len = strlen(S);
+
+
+		if (len == 1)
+			printf("%c%c\n", S[0], S[0]);
+		else if (len > 0)
+			printf("%c%c\n", S[0], S[len - 1]);
+	}*/
+
+	/*int A, B;
+	scanf("%d %d", &A, &B);
+	printf("%d", AtSign(A, B));*/
+	
+	PrintData(10);
+	PrintString("hello");
+
 	
 }

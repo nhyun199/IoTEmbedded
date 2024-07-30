@@ -1,4 +1,34 @@
 ﻿#include <stdio.h>
+#include <string.h>
+
+int Substitute(const char* source, char* destination,
+	char* source_charset, char* dest_charset)
+{
+	destination[100];
+	
+
+
+}
+
+char* Maginify(char* source) // 소문자를 대문자로
+{
+	for (int i = 0; i < strlen(source); i++)
+	{
+		if (source[i] >= 'a' && source[i] <= 'z')
+			source[i] -= 32;
+	}
+	return source;
+}
+
+char* Minify(char* source) // 대문자를 소문자로
+{
+	for (int i = 0; i < strlen(source); i++)
+	{
+		if (source[i] >= 'A' && source[i] <= 'Z')
+			source[i] += 32;
+	}
+	return source;
+}
 
 int main()
 {
@@ -9,9 +39,7 @@ int main()
 
 	// Combine - 문자열 합치기
 
-	// Adjust, Adapt - 원본 문자열 변경
-
-	// Maginify, Minify - 대소문자 변환
+	// Adjust, Adapt - 원본 문자열 변경		
 
 	// Put to another use - P로 시작하는 문자열 관련 함수 만들기
 
