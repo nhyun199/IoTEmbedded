@@ -5,7 +5,8 @@
 #include <stdbool.h>
 #include <string.h>
 #include "../LibTest/LibTest.h"
-//#pragma comment(lib, "./x64/Debug/LibTest") //
+//#pragma comment(lib, "./x64/Debug/LibTest") // 라이브러리 위치를 알려줌
+//#ifndef #endif == pragma once 실행 파일에 포함되지 않음. preprocess에서만..
 
 #define LOTTO_MAX_NUM 45
 #define LOTTO_NUM_COUNT 6

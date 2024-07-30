@@ -1,6 +1,5 @@
-﻿#include <stdio.h>
-
-#define _CRT_SECURE_NO_WARNINGS
+﻿#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
 
 int AtSign(int A, int B)
 {
@@ -246,4 +245,58 @@ int main()
 		printf("\n");
 	}*/
 
+	// 3003번 체스
+
+	// 킹 퀸 룩 비숍 나이트 폰 1 1 2 2 2 8
+
+	//int Chess_Origin[6] = { 1, 1, 2, 2, 2, 8 };
+	//int Piece[6]; // 현재 가진 개수
+	//int PieceMissig[6];
+
+	//for (int i = 0; i < 6; i++)
+	//{
+	//	scanf("%d", &Piece[i]);
+	//	PieceMissig[i] = Chess_Origin[i] - Piece[i];
+	//	printf("%d ", PieceMissig[i]);
+	//}
+	
+	// A B를 비교하여 문자를 출력하고 0 0 이 들어오면 종료하기
+	/*int A, B;
+
+	for (; ; )
+	{
+		scanf("%d %d", &A, &B);
+
+		if (A != 0 || B != 0)
+		{
+			if (A > B)
+				printf("Yes\n");
+			else
+				printf("No\n");
+		}
+		else
+			break;
+	}*/
+
+	// 두 문자열의 길이 비교
+	//char Ah[1001]; // 재환이의 ah
+	//char AhDoctor[1001]; // 의사가 요구하는 ah
+	//// 같거나 길면 go 짧으면 no?
+
+	//scanf("%s", Ah);
+	//scanf("%s", AhDoctor);
+
+	//if (strlen(Ah) >= strlen(AhDoctor))
+	//	printf("go");
+	//else
+	//	printf("no");
+
+	//printf("강한친구 대한육군\n강한친구 대한육군");
+
+	char ID[21];
+	char FAN[5] = ":fan:";
+	scanf("%20s", ID);
+	printf("%s%s%s\n", FAN, FAN, FAN);
+	//printf("%s%s%s\n", FAN, ID, FAN);
+	//printf("%s%s%s\n", FAN, FAN, FAN);
 }
