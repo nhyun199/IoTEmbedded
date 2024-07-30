@@ -56,10 +56,10 @@ Mkfile.old
 dkms.conf
 
 # ETC
-*.sln
-*.vcxproj
-*.vcxproj.filters
-*.vcxproj.user
+# *.sln
+# *.vcxproj
+# *.vcxproj.filters
+# *.vcxproj.user
 
 
 ### C++ ###
