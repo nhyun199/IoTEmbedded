@@ -12,6 +12,31 @@
 #define LOTTO_NUM_COUNT 6
 #define TRIALS 1000000
 
+typedef struct _ENGINE
+{
+	char manufacture[50];
+	char model[50];
+	int year;
+	char color[20];
+	double price;
+} ENGINE;
+
+typedef struct _CAR
+{
+	char manufacture[50];
+	char model[50];
+	int year;
+	char color[20];
+	double price;
+	ENGINE engine;
+} CAR;
+
+
+void CAR_stop(CAR* car) 
+{
+	//engine.stop()
+};
+
 void generateLottoNumbers(int* lottoNumbers, int count)
 {
 	srand(time(0));
@@ -169,6 +194,10 @@ void main()
 	}*/
 	
 	// 정적 라이브러리
-	PrintData(10);
-	PrintString("hello");	
+	//PrintData(10);
+	//PrintString("hello");	
+
+	CAR yellow_car = {"Toyota", " Corolla", 2020, "Yellow", 2000.0};
+	yellow_car.price = 200;
+	CAR_stop(&yellow_car);
 }

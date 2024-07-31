@@ -1,5 +1,7 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 int AtSign(int A, int B)
 {
@@ -293,10 +295,49 @@ int main()
 
 	//printf("강한친구 대한육군\n강한친구 대한육군");
 
-	char ID[21];
-	char FAN[5] = ":fan:";
-	scanf("%20s", ID);
+	/*char ID[21];
+	char FAN[] = ":fan:";
+	scanf("%s", ID);	
 	printf("%s%s%s\n", FAN, FAN, FAN);
-	//printf("%s%s%s\n", FAN, ID, FAN);
-	//printf("%s%s%s\n", FAN, FAN, FAN);
+	printf("%s:%s:%s\n", FAN, ID, FAN);
+	printf("%s%s%s", FAN, FAN, FAN);*/
+
+	/*int A, B;
+	scanf("%d %d", &A, &B);
+	printf("%d %d", B - A, B);*/
+
+	/*int nA, nB, nC;
+	char chA[5];
+	char chB[5];
+	char result[5];
+	scanf("%d %d %d", &nA, &nB, &nC);
+	sprintf(chA, "%d", nA);
+	sprintf(chB, "%d", nB);
+	strcpy(result, chA);
+	strcat(result, chB);
+
+	printf("%d\n", nA + nB - nC);
+	printf("%d", atoi(result) - nC);*/
+	
+	int N[9];
+	int max = 0;
+	int index = 1;
+	for (int i = 0; i < 9; i++)
+	{
+		scanf("%d", &N[i]);
+		if (max < N[i])
+			max = N[i];
+	}
+
+	for (int i = 0; i < 9; i++)
+	{
+		if (max != N[i])
+			index++;
+		else
+			break;
+	}
+
+	printf("%d\n%d", max, index);
+
+	
 }
