@@ -1,7 +1,6 @@
 #define ONE_WIRE 3
 
 void setup(){
-    //pinMode(LED_BUILTIN, OUTPUT);
     Serial.begin(9600);
 }
 
