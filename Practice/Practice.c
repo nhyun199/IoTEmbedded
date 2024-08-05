@@ -357,21 +357,7 @@ int main()
 		printf("\n");
 	}*/
 
-	//char S[101];
-	//char alpha[] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
-	//int correct[] = { 0 };
-
-	//scanf("%s", S);
-	//// back
-	//for (int i = 0; i < strlen(S); i++)
-	//{
-	//	if (S[i] == alpha[i])
-	//	{
-	//		correct[i] 
-	//	}
-	//}
-
-	int N[8] = { 0 };
+	/*int N[8] = { 0 };
 	int N2[8] = { 1, 2, 3, 4, 5, 6, 7, 8 };
 	int ascen = 0;
 	int descen = 0;
@@ -393,7 +379,7 @@ int main()
 	else if (descen == 8)
 		printf("descending");
 	else
-		printf("mixed");
+		printf("mixed");*/
 
 	
 	//int A, B, C;
@@ -419,5 +405,29 @@ int main()
 	//for (int i = 0; i < 10; i++)
 	//	printf("%d\n", N[i]);
 	
+	char S[101];
+	char alpha[26];
+	int correct[26];
+	scanf("%s", S);
 
+	for (int i = 0; i < 26; i++)
+	{
+		alpha[i] = 'a' + i;
+		correct[i] = -1;
+	}
+
+	for (int i = 0; i < strlen(S); i++)
+	{
+		for (int j = 0; j < 26; j++)
+		{
+			if (S[i] == alpha[j] && correct[j] == -1)
+			{
+				correct[j] = i;
+				break;
+			}
+		}
+	}
+
+	for (int i = 0; i < 26; i++)
+		printf("%d ", correct[i]);
 }
