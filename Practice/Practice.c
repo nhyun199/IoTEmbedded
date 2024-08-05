@@ -319,7 +319,7 @@ int main()
 	printf("%d\n", nA + nB - nC);
 	printf("%d", atoi(result) - nC);*/
 	
-	int N[9];
+	/*int N[9];
 	int max = 0;
 	int index = 1;
 	for (int i = 0; i < 9; i++)
@@ -337,7 +337,58 @@ int main()
 			break;
 	}
 
-	printf("%d\n%d", max, index);
+	printf("%d\n%d", max, index);*/
 
-	
+	/*int T, R;
+	char S[21];
+
+	scanf("%d", &T);
+
+	for (int i = 0; i < T; i++)
+	{
+		scanf("%d %s", &R, S);
+		for (int j = 0; j < strlen(S); j++)
+		{
+			for (int k = 0; k < R; k++)
+			{
+				printf("%c", S[j]);
+			}
+		}
+		printf("\n");
+	}*/
+
+	//char S[101];
+	//char alpha[] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+	//int correct[] = { 0 };
+
+	//scanf("%s", S);
+	//// back
+	//for (int i = 0; i < strlen(S); i++)
+	//{
+	//	if (S[i] == alpha[i])
+	//	{
+	//		correct[i] 
+	//	}
+	//}
+
+	/*int N[8];
+	int N2[8] = { 1, 2, 3, 4, 5, 6, 7, 8 };
+	for (int i = 0; i < 8; i++)
+	{
+		scanf("%d", &N[i]);
+	}
+
+	for (int i = 0; i < 8; i++)
+	{
+		if (N[i] == N2[i])
+			printf("ascending");	
+
+		else if (N[i] == N2[7 - i])
+			printf("descending");
+		
+		else
+			printf("mixed");		
+	}*/
+
+
 }

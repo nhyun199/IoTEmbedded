@@ -197,7 +197,28 @@ void main()
 	//PrintData(10);
 	//PrintString("hello");	
 
-	CAR yellow_car = {"Toyota", " Corolla", 2020, "Yellow", 2000.0};
+	/*CAR yellow_car = {"Toyota", " Corolla", 2020, "Yellow", 2000.0};
 	yellow_car.price = 200;
-	CAR_stop(&yellow_car);
+	CAR_stop(&yellow_car);*/
+
+	// 원주율 계산하기
+	bool sign = false;
+	double pi = 0;
+
+	for (int i = 1; i <= 1000000000; i += 2)
+	{
+		if (sign == false)
+		{
+			pi += (double)1 / i;
+			sign = true;
+		}
+		else
+		{
+			pi -= (double)1 / i;
+			sign = false;
+		}
+
+		if (i < 20 || i > 999999990)
+			printf("i = %10d, pi = %.18f\n", i, 4 * pi);
+	}
 }
