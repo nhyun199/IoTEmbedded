@@ -1,20 +1,24 @@
 #define ONE_WIRE 3
 
-void Reset(){
-    pinMode(ONE_WIRE, OUTPUT);
+bool Reset(){
     digitalWrite(ONE_WIRE, LOW);
-    delayMicroseconds(500);
+    pinMode(ONE_WIRE, OUTPUT);
 
-    pinMode(ONE_WIRE, INPUT); // LOW 에서 HIGH로 변함
-    delayMicroseconds(10);
+    delayMicroseconds(500);
+    pinMode(ONE_WIRE, INPUT);
+    delayMicroseconds(100);
+     
     
-    int32_t time = 0;
-    while (++time < 2000000)
+    if(digitalRead(ONE_WIRE) == LOW)
     {
-        if(digitalRead(ONE_WIRE) == HIGH);
-        else Serial.println("Reset Pulse");
-        delayMicroseconds(1);
+        delayMicroseconds(380);
+        //Serial.println("Reset Pulse");
+        return true;
     }
+    else // HIGH
+    {
+        return false;
+    }   
 }
 
 void setup(){
