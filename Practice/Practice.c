@@ -371,24 +371,46 @@ int main()
 	//	}
 	//}
 
-	/*int N[8];
+	int N[8] = { 0 };
 	int N2[8] = { 1, 2, 3, 4, 5, 6, 7, 8 };
+	int ascen = 0;
+	int descen = 0;
+	
 	for (int i = 0; i < 8; i++)
-	{
 		scanf("%d", &N[i]);
-	}
-
+	
 	for (int i = 0; i < 8; i++)
 	{
 		if (N[i] == N2[i])
-			printf("ascending");	
+			ascen++;
 
-		else if (N[i] == N2[7 - i])
-			printf("descending");
-		
-		else
-			printf("mixed");		
-	}*/
+		else if (N[i] == N2[8 - i])
+			descen++;
+	}
 
+	
+	//int A, B, C;
+	//int ABC[10] = {0};
+	//int N[10] = {0};
+	//scanf("%d %d %d", &A, &B, &C);
+
+	//int num = A * B * C;
+	//int index = 0;
+
+	//while (num > 0)	// 제일 작은 자릿수가 0부터 들어감. -> 출력할 때 역순으로 해야된다는 이야기다.
+	//{
+	//	ABC[index] = num % 10;
+	//	num /= 10;
+	//	index++;
+	//}
+
+	//for (int i = 0; i < index; i++)
+	//{
+	//	N[ABC[i]]++;
+	//}
+
+	//for (int i = 0; i < 10; i++)
+	//	printf("%d\n", N[i]);
+	
 
 }
