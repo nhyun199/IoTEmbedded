@@ -384,9 +384,16 @@ int main()
 		if (N[i] == N2[i])
 			ascen++;
 
-		else if (N[i] == N2[8 - i])
+		else if (N[i] == N2[7 - i])
 			descen++;
 	}
+
+	if (ascen == 8)
+		printf("ascending");
+	else if (descen == 8)
+		printf("descending");
+	else
+		printf("mixed");
 
 	
 	//int A, B, C;
