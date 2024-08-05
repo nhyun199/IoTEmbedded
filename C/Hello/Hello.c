@@ -205,7 +205,7 @@ void main()
 	bool sign = false;
 	double pi = 0;
 
-	for (int i = 1; i <= 1000000000; i += 2)
+	for (int i = 1; i <= 100000000000; i += 2)
 	{
 		if (sign == false)
 		{
