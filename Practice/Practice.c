@@ -405,7 +405,7 @@ int main()
 	//for (int i = 0; i < 10; i++)
 	//	printf("%d\n", N[i]);
 	
-	char S[101];
+	/*char S[101];
 	char alpha[26];
 	int correct[26];
 	scanf("%s", S);
@@ -429,5 +429,34 @@ int main()
 	}
 
 	for (int i = 0; i < 26; i++)
-		printf("%d ", correct[i]);
+		printf("%d ", correct[i]);*/
+
+	int N[10]; // 나눌 수
+	int remain[10]; // 42로 나눈 나머지를 담음
+	int remain_42[42] = {0,};
+	// 나올 수 있는 나머지의 값은 0 ~ 41
+	int sum = 0; // 중복값 판단
+
+	for (int i = 0; i < 10; i++)
+	{
+		scanf("%d", &N[i]);
+		remain[i] = N[i] % 42;		
+	}
+
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < 42; j++)
+		{
+			if (remain[i] == j)
+				remain_42[j] = 1;
+		}
+	}
+
+	for (int i = 0; i < 42; i++)
+		sum += remain_42[i];
+
+	printf("%d", sum);
+
+	
+
 }
