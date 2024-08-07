@@ -487,53 +487,22 @@ int main()
 	}*/
 	
 	char S[1000001];
-	fgets(S, sizeof(S), stdin);
+	scanf("%[^\n]", S);
 	int len = strlen(S);
-	int sentence = 1;	
+	int blank = 1;
+
+	if (S[0] == ' ' && len == 1) // 공백 하나로 된 문자열
+		printf("0");
 	
-	if (S[len - 1] == '\n')
-	{
-		S[len - 1] = '\0';
-		len--;
-	}
-
-
- 	if (S[0] == ' ')
-	{
-		for (int i = 1; i < len; i++)
-		{
-			if (S[i] == ' ')
-				sentence++;
-		}
-	}
-	
-	else if (S[len-1] == ' ')
-	{
-		for (int i = 0; i < len - 1; i++)
-		{
-			if (S[i] == ' ')
-				sentence++;
-		}
-	}
-
-	else if (S[0] == ' ' && S[len - 1] == ' ')
+	else
 	{
 		for (int i = 1; i < len - 1; i++)
 		{
 			if (S[i] == ' ')
-				sentence++;
+				blank++;
 		}
+		printf("%d", blank);
 	}
+	
 
-	else
-	{
-		for (int i = 0; i < len; i++)
-		{
-			if (S[i] == ' ')
-				sentence++;
-		}
-	}
-	printf("%d", sentence);
-	
-	
 }
