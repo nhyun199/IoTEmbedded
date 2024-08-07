@@ -431,32 +431,109 @@ int main()
 	for (int i = 0; i < 26; i++)
 		printf("%d ", correct[i]);*/
 
-	int N[10]; // 나눌 수
-	int remain[10]; // 42로 나눈 나머지를 담음
-	int remain_42[42] = {0,};
-	// 나올 수 있는 나머지의 값은 0 ~ 41
-	int sum = 0; // 중복값 판단
+	//int N[10]; // 나눌 수
+	//int remain[10]; // 42로 나눈 나머지를 담음
+	//int remain_42[42] = {0,};
+	//// 나올 수 있는 나머지의 값은 0 ~ 41
+	//int sum = 0; // 중복값 판단
 
-	for (int i = 0; i < 10; i++)
+	//for (int i = 0; i < 10; i++)
+	//{
+	//	scanf("%d", &N[i]);
+	//	remain[i] = N[i] % 42;		
+	//}
+
+	//for (int i = 0; i < 10; i++)
+	//{
+	//	for (int j = 0; j < 42; j++)
+	//	{
+	//		if (remain[i] == j)
+	//			remain_42[j] = 1;
+	//	}
+	//}
+
+	//for (int i = 0; i < 42; i++)
+	//	sum += remain_42[i];
+
+	//printf("%d", sum);
+
+	/*int T;
+	scanf("%d", &T);
+	char S[80];
+
+	for (int i = 0; i < T; i++)
 	{
-		scanf("%d", &N[i]);
-		remain[i] = N[i] % 42;		
+		scanf("%s", S);
+		int len = strlen(S);
+		int score = 0;
+		int sum = 0;
+		
+		for (int j = 0; j < len; j++)
+		{
+			if (S[j] == 'O')
+			{
+				score++;
+				sum += score;
+			}
+
+			else if (S[j] == 'X')
+			{
+				score = 0;
+			}
+			
+		}
+
+		printf("%d\n", sum);
+	}*/
+	
+	char S[1000001];
+	fgets(S, sizeof(S), stdin);
+	int len = strlen(S);
+	int sentence = 1;	
+	
+	if (S[len - 1] == '\n')
+	{
+		S[len - 1] = '\0';
+		len--;
 	}
 
-	for (int i = 0; i < 10; i++)
+
+ 	if (S[0] == ' ')
 	{
-		for (int j = 0; j < 42; j++)
+		for (int i = 1; i < len; i++)
 		{
-			if (remain[i] == j)
-				remain_42[j] = 1;
+			if (S[i] == ' ')
+				sentence++;
+		}
+	}
+	
+	else if (S[len-1] == ' ')
+	{
+		for (int i = 0; i < len - 1; i++)
+		{
+			if (S[i] == ' ')
+				sentence++;
 		}
 	}
 
-	for (int i = 0; i < 42; i++)
-		sum += remain_42[i];
+	else if (S[0] == ' ' && S[len - 1] == ' ')
+	{
+		for (int i = 1; i < len - 1; i++)
+		{
+			if (S[i] == ' ')
+				sentence++;
+		}
+	}
 
-	printf("%d", sum);
-
+	else
+	{
+		for (int i = 0; i < len; i++)
+		{
+			if (S[i] == ' ')
+				sentence++;
+		}
+	}
+	printf("%d", sentence);
 	
-
+	
 }

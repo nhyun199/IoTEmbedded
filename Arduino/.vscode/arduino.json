@@ -1,5 +1,5 @@
 {
-    "sketch": "R3_UNO\\command\\command.ino",
+    "sketch": "R3_UNO\\without\\without.ino",
     "board": "arduino:avr:uno",
     "port": "COM3",
     "output": "./build"
