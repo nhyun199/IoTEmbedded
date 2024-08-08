@@ -486,23 +486,101 @@ int main()
 		printf("%d\n", sum);
 	}*/
 	
-	char S[1000001];
-	scanf("%[^\n]", S);
-	int len = strlen(S);
-	int blank = 1;
+	//char S[1000001];
+	//scanf("%[^\n]", S);
+	//int len = strlen(S);
+	//int blank = 1;
 
-	if (S[0] == ' ' && len == 1) // 공백 하나로 된 문자열
-		printf("0");
+	//if (S[0] == ' ' && len == 1) // 공백 하나로 된 문자열
+	//	printf("0");
+	//
+	//else
+	//{
+	//	for (int i = 1; i < len - 1; i++)
+	//	{
+	//		if (S[i] == ' ')
+	//			blank++;
+	//	}
+	//	printf("%d", blank);
+	//}
+
+	/*int T;
+	int H, W, N;
+	int roomNum;
+	scanf("%d", &T);
 	
-	else
+	for (int i = 0; i < T; i++)
 	{
-		for (int i = 1; i < len - 1; i++)
-		{
-			if (S[i] == ' ')
-				blank++;
-		}
-		printf("%d", blank);
-	}
-	
+		scanf("%d %d %d", &H, &W, &N);
+		
+		int floor = (N - 1) % H + 1;
+		int room = (N - 1) / H + 1;
+		roomNum = floor * 100 + room;
 
+		printf("%d\n", roomNum);
+	}*/
+	
+	// H > N H01 roomNum = H * 100 + 1
+	// H < N && N % H = 0 H층 N/H호
+	// H < N && N % H != 0 11층 20번째 손님 (N % H)층 (N/H+1)호?
+	
+	// 직각삼각형 - 피타고라스
+	/*int a, b, c;
+	for (; ;)
+	{
+		scanf("%d %d %d", &a, &b, &c);
+		int A = a * a;
+		int B = b * b;
+		int C = c * c;
+		if (a != 0 && b != 0 && c != 0)
+		{
+			if (a > b && a > c)
+			{
+				if (A == B + C)
+					printf("right\n");
+				else
+					printf("wrong\n");
+			}
+			else if (b > a && b > c)
+			{
+				if (B == A + C)
+					printf("right\n");
+				else
+					printf("wrong\n");
+			}
+			else if (c > a && c > b)
+			{
+				if (C == A + B)
+					printf("right\n");
+				else
+					printf("wrong\n");
+			}
+		}
+		else if (a == 0 && b == 0 && c == 0)
+			break;
+	}*/
+
+	int N;
+	int M=0;
+	float sum = 0;
+	int score[1000];
+	scanf("%d", &N);
+
+	for (int i = 0; i < N; i++)
+	{
+		scanf("%d", &score[i]);		
+	}
+
+	for (int i = 0; i < N; i++)
+	{
+		if (M < score[i])
+			M = score[i];
+	}
+
+	for (int i = 0; i < N; i++)
+	{
+		sum += (float)score[i] / M * 100;
+	}
+
+	printf("%f", sum / N);
 }
