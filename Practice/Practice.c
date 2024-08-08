@@ -560,7 +560,7 @@ int main()
 			break;
 	}*/
 
-	int N;
+	/*int N;
 	int M=0;
 	float sum = 0;
 	int score[1000];
@@ -582,5 +582,7 @@ int main()
 		sum += (float)score[i] / M * 100;
 	}
 
-	printf("%f", sum / N);
+	printf("%f", sum / N);*/
+
+	
 }
