@@ -584,5 +584,22 @@ int main()
 
 	printf("%f", sum / N);*/
 
+	int L;
+	int r = 1;
+	int M = 1234567891;
+	int H = 0;
+	char orgin[51];
+	int num[50];
+
+	scanf("%d", &L);
+	scanf("%s", orgin);
+	
+	for (int i = 0; i < L; i++)
+	{
+		num[i] = orgin[i] - 96;
+		H += num[i] * r % M;
+		r = (r * 31) % M;
+	}
+	printf("%d", H);
 	
 }
