@@ -673,7 +673,7 @@ int main()
 
 	printf("%d", Bino);*/
 	
-	int n = 0;
+	/*int n = 0;
 	char ch1[9];
 	char ch2[9];
 	char ch3[9];
@@ -702,11 +702,29 @@ int main()
 		printf("Buzz");
 
 	else
-		printf("%d", n);
+		printf("%d", n);*/
 	
+	int n1, n2;
+	int gcd = 0;
+	int lcm = 0;
+	int d1 = 1, d2 = 1;
+	scanf("%d %d", &n1, &n2);
 
-	
-	
+	for (int i = 1; i <= n1; i++)
+	{
+		for (int j = 1; j <= n2; j++)
+		{
+			if (n1 % i == 0)
+				d1 = i;
 
-	
+			if (n2 % j == 0)
+				d2 = j;
+
+			if (d1 == d2 && gcd <= d1)
+				gcd = d1;
+		}
+	}
+
+	lcm = gcd * (n1 / gcd) * (n2 / gcd);
+	printf("%d\n%d", gcd, lcm);
 }
