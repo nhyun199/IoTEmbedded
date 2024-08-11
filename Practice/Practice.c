@@ -584,7 +584,7 @@ int main()
 
 	printf("%f", sum / N);*/
 
-	int L;
+	/*int L;
 	int r = 1;
 	int M = 1234567891;
 	int H = 0;
@@ -600,6 +600,49 @@ int main()
 		H += num[i] * r % M;
 		r = (r * 31) % M;
 	}
-	printf("%d", H);
+	printf("%d", H);*/
+
+	// 소수 찾기
+	// 소수 = 1을 제외한, 1과 자기자신으로만 나누어 떨어지는 수를 말함.
+	// 수 n이 있으면.. 2부터 n-1까지 나누었을때.. 나머지가 0이면 안됨.
+
+	//int N;
+	int prime[100];
+	int count = 0;
+	
+	for (int i = 0; i < 100; i++)
+	{
+		prime[i] = i+1;		
+	}
+
+	for (int i = 0; i < 100; i++)
+	{
+		int is_prime = 1;
+
+		if (prime[i] == 1)
+			continue;
+
+		for (int j = 2; j < prime[i]; j++)
+		{
+			if (prime[i] % j == 0)
+			{
+				is_prime = 0;
+				break;
+			}
+		}
+		
+		if (is_prime)
+		{
+			printf("%d ", prime[i]);
+			count++;
+		}
+	}
+	printf("\n%d", count);
+
+
+	
+	
+
+	
 	
 }
