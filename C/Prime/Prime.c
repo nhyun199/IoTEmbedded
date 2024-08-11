@@ -1,10 +1,34 @@
-#define _CRT_SECURE_NO_WARNINGS
-
+ï»¿#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
 int main()
 {
-	// 2ºÎÅÍ 1000»çÀÌÀÇ ¼Ò¼ö °³¼ö Ãâ·ÂÇÏ±â
-	/*int prime;
-	int count = 0;*/
+	int N[999];
+	int primes = 0;
+
+	for (int i = 0; i < 999; i++)
+	{
+		N[i] = i + 2;
+	}
+
+	for (int i = 0; i < 999; i++)
+	{
+		int is_prime = 1;
+
+		for (int j = 2; j < N[i]; j++)
+		{
+			if (N[i] % j == 0)
+			{
+				is_prime = 0;
+				break;
+			}
+		}
+
+		if (is_prime)
+		{
+			printf("%d ", N[i]);
+			primes++;
+		}
+	}
+	printf("\n2ë¶€í„° 1000ì‚¬ì´ì˜ ì†Œìˆ˜ì˜ ê°¯ìˆ˜: %dê°œ", primes);
 }
