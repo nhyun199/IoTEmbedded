@@ -2,12 +2,41 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 int AtSign(int A, int B)
 {
 	int C;
 	C = (A + B) * (A - B);
 	return C;
+}
+
+int Factorial(int f)
+{
+	if (f == 1 || f == 0)
+	{
+		return 1;
+	}
+
+	int factorial = 1;
+	for (int i = 2; i <= f; i++)
+	{
+		factorial = factorial * i;
+		
+	}
+	return factorial;
+}
+
+int isNumeric(char *ch) // 문제에서 빈 문자열은 들어오지않는다고 가정함.
+{
+	int len = strlen(ch);
+	for (int i = 0; i < len; i++)
+	{
+		if (!isdigit(ch[i]))
+			return 0;
+	}
+
+	return 1;
 }
 
 int main()
@@ -30,7 +59,6 @@ int main()
 	}
 
 	printf("\nmax = %d, min = %d, average = %.1f", max, min, (float)sum / 10);*/
-
 	//printf("총합은 %d입니다",sum);
 
 
@@ -605,17 +633,18 @@ int main()
 	// 소수 찾기
 	// 소수 = 1을 제외한, 1과 자기자신으로만 나누어 떨어지는 수를 말함.
 	// 수 n이 있으면.. 2부터 n-1까지 나누었을때.. 나머지가 0이면 안됨.
-
-	//int N;
+	
+	/*int N;
 	int prime[100];
 	int count = 0;
-	
-	for (int i = 0; i < 100; i++)
+	scanf("%d", &N);
+
+	for (int i = 0; i < N; i++)
 	{
-		prime[i] = i+1;		
+		scanf("%d", &prime[i]);
 	}
 
-	for (int i = 0; i < 100; i++)
+	for (int i = 0; i < N; i++)
 	{
 		int is_prime = 1;
 
@@ -630,19 +659,54 @@ int main()
 				break;
 			}
 		}
-		
+
 		if (is_prime)
-		{
-			printf("%d ", prime[i]);
 			count++;
-		}
 	}
-	printf("\n%d", count);
+	printf("%d", count);*/
+	
+	/*int n, k;
+	int Bino = 0;
+	scanf("%d %d", &n, &k);
 
+	Bino = Factorial(n) / (Factorial(k) * Factorial(n - k));
+
+	printf("%d", Bino);*/
+	
+	int n = 0;
+	char ch1[9];
+	char ch2[9];
+	char ch3[9];
+	scanf("%s %s %s", ch1, ch2, ch3);
+
+	if (isNumeric(ch1))
+	{
+		n = atoi(ch1) + 3;
+	}
+	else if (isNumeric(ch2))
+	{
+		n = atoi(ch2) + 2;
+	}
+	else if (isNumeric(ch3))
+	{
+		n = atoi(ch3) + 1;
+	}
+		
+	if (n % 3 == 0 && n % 5 == 0)
+		printf("FizzBuzz");
+
+	else if (n % 3 == 0 && n % 5 != 0)
+		printf("Fizz");
+
+	else if (n % 3 != 0 && n % 5 == 0)
+		printf("Buzz");
+
+	else
+		printf("%d", n);
+	
 
 	
 	
 
-	
 	
 }
