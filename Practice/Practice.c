@@ -759,7 +759,7 @@ int main()
 				lcm = gcd * (n1 / gcd) * (n2 / gcd);
 				printf("%d\n%d", gcd, lcm);*/
 
-	int n = -1;
+	/*int n = -1;
 	while (1)
 	{
 		scanf("%d", &n);
@@ -767,6 +767,47 @@ int main()
 			palindrome(n);
 		else
 			break;
+	}*/
+	
+	//int A; // 하루에 올라가는 높이
+	//int B; // 하루에 미끄러지는 높이
+	//int V; // 나무 막대의 높이
+	//int H = 0;
+	////int M = 1000000001;
+	//int day = 0;
+	//scanf("%d %d %d", &A, &B, &V);
+
+	//day = ((V-B-1) / (A - B)) + 1;
+	//printf("%d", day);
+	
+	int N;	
+	scanf("%d", &N);
+
+	int* num = (int*)malloc(N * sizeof(int));
+
+	for (int i = 0; i < N; i++)
+	{
+		scanf("%d", &num[i]);
 	}
+
+	for (int i = 0; i < N-1; i++)
+	{
+		for (int j = 0; j < N - i - 1; j++)
+		{			
+			if (num[j] > num[j + 1])
+			{				
+				int temp = num[j];
+				num[j] = num[j + 1];
+				num[j + 1] = temp;
+			}
+		}
+	}
+
+	for(int i = 0; i < N; i++)
+	{
+		printf("%d ", num[i]);
+	}
+
+	free(num);
 }
 
