@@ -39,6 +39,37 @@ int isNumeric(char *ch) // 문제에서 빈 문자열은 들어오지않는다�
 	return 1;
 }
 
+void palindrome(int num)
+{
+	char num_ch[6];
+	char num_pal[6];
+	char temp[6];
+	int correct = 0;
+
+	sprintf(num_ch, "%d", num);
+	
+	for (int i = 0; i < strlen(num_ch); i++)
+	{
+		temp[i] = num_ch[i];
+		num_pal[strlen(num_ch) - 1 - i] = temp[i];
+	}
+	num_pal[strlen(num_ch)] = '\0';
+
+	for (int i = 0; i < strlen(num_ch); i++)
+	{
+		if (num_ch[i] == num_pal[i])
+		{
+		}
+		else
+			correct++;
+	}
+
+	if (correct > 0)
+		printf("no\n");
+	else
+		printf("yes\n");
+}
+
 int main()
 {
 	/*min = a[0];
@@ -52,7 +83,7 @@ int main()
 		if (max < a[i])
 			max = a[i];
 	}
-	
+
 	for (int i = 0; i < 10; i++)
 	{
 		printf("%d ", a[i]);
@@ -105,7 +136,7 @@ int main()
 		for (int k = 0; k < i; k++)
 		{
 			printf("*");
-		}		
+		}
 		printf("*\n");
 	}*/
 
@@ -237,7 +268,7 @@ int main()
 			printf("%c%c\n", S[0], S[len - 1]);
 	}*/
 
-	
+
 	/*int A, B;
 	scanf("%d %d", &A, &B);
 	printf("%d", AtSign(A, B));*/
@@ -289,7 +320,7 @@ int main()
 	//	PieceMissig[i] = Chess_Origin[i] - Piece[i];
 	//	printf("%d ", PieceMissig[i]);
 	//}
-	
+
 	// A B를 비교하여 문자를 출력하고 0 0 이 들어오면 종료하기
 	/*int A, B;
 
@@ -325,7 +356,7 @@ int main()
 
 	/*char ID[21];
 	char FAN[] = ":fan:";
-	scanf("%s", ID);	
+	scanf("%s", ID);
 	printf("%s%s%s\n", FAN, FAN, FAN);
 	printf("%s:%s:%s\n", FAN, ID, FAN);
 	printf("%s%s%s", FAN, FAN, FAN);*/
@@ -346,7 +377,7 @@ int main()
 
 	printf("%d\n", nA + nB - nC);
 	printf("%d", atoi(result) - nC);*/
-	
+
 	/*int N[9];
 	int max = 0;
 	int index = 1;
@@ -389,10 +420,10 @@ int main()
 	int N2[8] = { 1, 2, 3, 4, 5, 6, 7, 8 };
 	int ascen = 0;
 	int descen = 0;
-	
+
 	for (int i = 0; i < 8; i++)
 		scanf("%d", &N[i]);
-	
+
 	for (int i = 0; i < 8; i++)
 	{
 		if (N[i] == N2[i])
@@ -409,322 +440,333 @@ int main()
 	else
 		printf("mixed");*/
 
-	
-	//int A, B, C;
-	//int ABC[10] = {0};
-	//int N[10] = {0};
-	//scanf("%d %d %d", &A, &B, &C);
 
-	//int num = A * B * C;
-	//int index = 0;
+		//int A, B, C;
+		//int ABC[10] = {0};
+		//int N[10] = {0};
+		//scanf("%d %d %d", &A, &B, &C);
 
-	//while (num > 0)	// 제일 작은 자릿수가 0부터 들어감. -> 출력할 때 역순으로 해야된다는 이야기다.
-	//{
-	//	ABC[index] = num % 10;
-	//	num /= 10;
-	//	index++;
-	//}
+		//int num = A * B * C;
+		//int index = 0;
 
-	//for (int i = 0; i < index; i++)
-	//{
-	//	N[ABC[i]]++;
-	//}
+		//while (num > 0)	// 제일 작은 자릿수가 0부터 들어감. -> 출력할 때 역순으로 해야된다는 이야기다.
+		//{
+		//	ABC[index] = num % 10;
+		//	num /= 10;
+		//	index++;
+		//}
 
-	//for (int i = 0; i < 10; i++)
-	//	printf("%d\n", N[i]);
-	
-	/*char S[101];
-	char alpha[26];
-	int correct[26];
-	scanf("%s", S);
+		//for (int i = 0; i < index; i++)
+		//{
+		//	N[ABC[i]]++;
+		//}
 
-	for (int i = 0; i < 26; i++)
-	{
-		alpha[i] = 'a' + i;
-		correct[i] = -1;
-	}
+		//for (int i = 0; i < 10; i++)
+		//	printf("%d\n", N[i]);
 
-	for (int i = 0; i < strlen(S); i++)
-	{
-		for (int j = 0; j < 26; j++)
-		{
-			if (S[i] == alpha[j] && correct[j] == -1)
-			{
-				correct[j] = i;
-				break;
-			}
-		}
-	}
-
-	for (int i = 0; i < 26; i++)
-		printf("%d ", correct[i]);*/
-
-	//int N[10]; // 나눌 수
-	//int remain[10]; // 42로 나눈 나머지를 담음
-	//int remain_42[42] = {0,};
-	//// 나올 수 있는 나머지의 값은 0 ~ 41
-	//int sum = 0; // 중복값 판단
-
-	//for (int i = 0; i < 10; i++)
-	//{
-	//	scanf("%d", &N[i]);
-	//	remain[i] = N[i] % 42;		
-	//}
-
-	//for (int i = 0; i < 10; i++)
-	//{
-	//	for (int j = 0; j < 42; j++)
-	//	{
-	//		if (remain[i] == j)
-	//			remain_42[j] = 1;
-	//	}
-	//}
-
-	//for (int i = 0; i < 42; i++)
-	//	sum += remain_42[i];
-
-	//printf("%d", sum);
-
-	/*int T;
-	scanf("%d", &T);
-	char S[80];
-
-	for (int i = 0; i < T; i++)
-	{
+		/*char S[101];
+		char alpha[26];
+		int correct[26];
 		scanf("%s", S);
-		int len = strlen(S);
-		int score = 0;
-		int sum = 0;
-		
-		for (int j = 0; j < len; j++)
-		{
-			if (S[j] == 'O')
-			{
-				score++;
-				sum += score;
-			}
 
-			else if (S[j] == 'X')
-			{
-				score = 0;
-			}
-			
+		for (int i = 0; i < 26; i++)
+		{
+			alpha[i] = 'a' + i;
+			correct[i] = -1;
 		}
 
-		printf("%d\n", sum);
-	}*/
-	
-	//char S[1000001];
-	//scanf("%[^\n]", S);
-	//int len = strlen(S);
-	//int blank = 1;
-
-	//if (S[0] == ' ' && len == 1) // 공백 하나로 된 문자열
-	//	printf("0");
-	//
-	//else
-	//{
-	//	for (int i = 1; i < len - 1; i++)
-	//	{
-	//		if (S[i] == ' ')
-	//			blank++;
-	//	}
-	//	printf("%d", blank);
-	//}
-
-	/*int T;
-	int H, W, N;
-	int roomNum;
-	scanf("%d", &T);
-	
-	for (int i = 0; i < T; i++)
-	{
-		scanf("%d %d %d", &H, &W, &N);
-		
-		int floor = (N - 1) % H + 1;
-		int room = (N - 1) / H + 1;
-		roomNum = floor * 100 + room;
-
-		printf("%d\n", roomNum);
-	}*/
-	
-	// H > N H01 roomNum = H * 100 + 1
-	// H < N && N % H = 0 H층 N/H호
-	// H < N && N % H != 0 11층 20번째 손님 (N % H)층 (N/H+1)호?
-	
-	// 직각삼각형 - 피타고라스
-	/*int a, b, c;
-	for (; ;)
-	{
-		scanf("%d %d %d", &a, &b, &c);
-		int A = a * a;
-		int B = b * b;
-		int C = c * c;
-		if (a != 0 && b != 0 && c != 0)
+		for (int i = 0; i < strlen(S); i++)
 		{
-			if (a > b && a > c)
+			for (int j = 0; j < 26; j++)
 			{
-				if (A == B + C)
-					printf("right\n");
-				else
-					printf("wrong\n");
-			}
-			else if (b > a && b > c)
-			{
-				if (B == A + C)
-					printf("right\n");
-				else
-					printf("wrong\n");
-			}
-			else if (c > a && c > b)
-			{
-				if (C == A + B)
-					printf("right\n");
-				else
-					printf("wrong\n");
+				if (S[i] == alpha[j] && correct[j] == -1)
+				{
+					correct[j] = i;
+					break;
+				}
 			}
 		}
-		else if (a == 0 && b == 0 && c == 0)
+
+		for (int i = 0; i < 26; i++)
+			printf("%d ", correct[i]);*/
+
+			//int N[10]; // 나눌 수
+			//int remain[10]; // 42로 나눈 나머지를 담음
+			//int remain_42[42] = {0,};
+			//// 나올 수 있는 나머지의 값은 0 ~ 41
+			//int sum = 0; // 중복값 판단
+
+			//for (int i = 0; i < 10; i++)
+			//{
+			//	scanf("%d", &N[i]);
+			//	remain[i] = N[i] % 42;		
+			//}
+
+			//for (int i = 0; i < 10; i++)
+			//{
+			//	for (int j = 0; j < 42; j++)
+			//	{
+			//		if (remain[i] == j)
+			//			remain_42[j] = 1;
+			//	}
+			//}
+
+			//for (int i = 0; i < 42; i++)
+			//	sum += remain_42[i];
+
+			//printf("%d", sum);
+
+			/*int T;
+			scanf("%d", &T);
+			char S[80];
+
+			for (int i = 0; i < T; i++)
+			{
+				scanf("%s", S);
+				int len = strlen(S);
+				int score = 0;
+				int sum = 0;
+
+				for (int j = 0; j < len; j++)
+				{
+					if (S[j] == 'O')
+					{
+						score++;
+						sum += score;
+					}
+
+					else if (S[j] == 'X')
+					{
+						score = 0;
+					}
+
+				}
+
+				printf("%d\n", sum);
+			}*/
+
+			//char S[1000001];
+			//scanf("%[^\n]", S);
+			//int len = strlen(S);
+			//int blank = 1;
+
+			//if (S[0] == ' ' && len == 1) // 공백 하나로 된 문자열
+			//	printf("0");
+			//
+			//else
+			//{
+			//	for (int i = 1; i < len - 1; i++)
+			//	{
+			//		if (S[i] == ' ')
+			//			blank++;
+			//	}
+			//	printf("%d", blank);
+			//}
+
+			/*int T;
+			int H, W, N;
+			int roomNum;
+			scanf("%d", &T);
+
+			for (int i = 0; i < T; i++)
+			{
+				scanf("%d %d %d", &H, &W, &N);
+
+				int floor = (N - 1) % H + 1;
+				int room = (N - 1) / H + 1;
+				roomNum = floor * 100 + room;
+
+				printf("%d\n", roomNum);
+			}*/
+
+			// H > N H01 roomNum = H * 100 + 1
+			// H < N && N % H = 0 H층 N/H호
+			// H < N && N % H != 0 11층 20번째 손님 (N % H)층 (N/H+1)호?
+
+			// 직각삼각형 - 피타고라스
+			/*int a, b, c;
+			for (; ;)
+			{
+				scanf("%d %d %d", &a, &b, &c);
+				int A = a * a;
+				int B = b * b;
+				int C = c * c;
+				if (a != 0 && b != 0 && c != 0)
+				{
+					if (a > b && a > c)
+					{
+						if (A == B + C)
+							printf("right\n");
+						else
+							printf("wrong\n");
+					}
+					else if (b > a && b > c)
+					{
+						if (B == A + C)
+							printf("right\n");
+						else
+							printf("wrong\n");
+					}
+					else if (c > a && c > b)
+					{
+						if (C == A + B)
+							printf("right\n");
+						else
+							printf("wrong\n");
+					}
+				}
+				else if (a == 0 && b == 0 && c == 0)
+					break;
+			}*/
+
+			/*int N;
+			int M=0;
+			float sum = 0;
+			int score[1000];
+			scanf("%d", &N);
+
+			for (int i = 0; i < N; i++)
+			{
+				scanf("%d", &score[i]);
+			}
+
+			for (int i = 0; i < N; i++)
+			{
+				if (M < score[i])
+					M = score[i];
+			}
+
+			for (int i = 0; i < N; i++)
+			{
+				sum += (float)score[i] / M * 100;
+			}
+
+			printf("%f", sum / N);*/
+
+			/*int L;
+			int r = 1;
+			int M = 1234567891;
+			int H = 0;
+			char orgin[51];
+			int num[50];
+
+			scanf("%d", &L);
+			scanf("%s", orgin);
+
+			for (int i = 0; i < L; i++)
+			{
+				num[i] = orgin[i] - 96;
+				H += num[i] * r % M;
+				r = (r * 31) % M;
+			}
+			printf("%d", H);*/
+
+			// 소수 찾기
+			// 소수 = 1을 제외한, 1과 자기자신으로만 나누어 떨어지는 수를 말함.
+			// 수 n이 있으면.. 2부터 n-1까지 나누었을때.. 나머지가 0이면 안됨.
+
+			/*int N;
+			int prime[100];
+			int count = 0;
+			scanf("%d", &N);
+
+			for (int i = 0; i < N; i++)
+			{
+				scanf("%d", &prime[i]);
+			}
+
+			for (int i = 0; i < N; i++)
+			{
+				int is_prime = 1;
+
+				if (prime[i] == 1)
+					continue;
+
+				for (int j = 2; j < prime[i]; j++)
+				{
+					if (prime[i] % j == 0)
+					{
+						is_prime = 0;
+						break;
+					}
+				}
+
+				if (is_prime)
+					count++;
+			}
+			printf("%d", count);*/
+
+			/*int n, k;
+			int Bino = 0;
+			scanf("%d %d", &n, &k);
+
+			Bino = Factorial(n) / (Factorial(k) * Factorial(n - k));
+
+			printf("%d", Bino);*/
+
+			/*int n = 0;
+			char ch1[9];
+			char ch2[9];
+			char ch3[9];
+			scanf("%s %s %s", ch1, ch2, ch3);
+
+			if (isNumeric(ch1))
+			{
+				n = atoi(ch1) + 3;
+			}
+			else if (isNumeric(ch2))
+			{
+				n = atoi(ch2) + 2;
+			}
+			else if (isNumeric(ch3))
+			{
+				n = atoi(ch3) + 1;
+			}
+
+			if (n % 3 == 0 && n % 5 == 0)
+				printf("FizzBuzz");
+
+			else if (n % 3 == 0 && n % 5 != 0)
+				printf("Fizz");
+
+			else if (n % 3 != 0 && n % 5 == 0)
+				printf("Buzz");
+
+			else
+				printf("%d", n);*/
+
+				/*int n1, n2;
+				int gcd = 0;
+				int lcm = 0;
+				int d1 = 1, d2 = 1;
+				scanf("%d %d", &n1, &n2);
+
+				for (int i = 1; i <= n1; i++)
+				{
+					for (int j = 1; j <= n2; j++)
+					{
+						if (n1 % i == 0)
+							d1 = i;
+
+						if (n2 % j == 0)
+							d2 = j;
+
+						if (d1 == d2 && gcd <= d1)
+							gcd = d1;
+					}
+				}
+
+				lcm = gcd * (n1 / gcd) * (n2 / gcd);
+				printf("%d\n%d", gcd, lcm);*/
+
+	int n = -1;
+	while (1)
+	{
+		scanf("%d", &n);
+		if (n != 0)
+			palindrome(n);
+		else
 			break;
-	}*/
-
-	/*int N;
-	int M=0;
-	float sum = 0;
-	int score[1000];
-	scanf("%d", &N);
-
-	for (int i = 0; i < N; i++)
-	{
-		scanf("%d", &score[i]);		
 	}
-
-	for (int i = 0; i < N; i++)
-	{
-		if (M < score[i])
-			M = score[i];
-	}
-
-	for (int i = 0; i < N; i++)
-	{
-		sum += (float)score[i] / M * 100;
-	}
-
-	printf("%f", sum / N);*/
-
-	/*int L;
-	int r = 1;
-	int M = 1234567891;
-	int H = 0;
-	char orgin[51];
-	int num[50];
-
-	scanf("%d", &L);
-	scanf("%s", orgin);
-	
-	for (int i = 0; i < L; i++)
-	{
-		num[i] = orgin[i] - 96;
-		H += num[i] * r % M;
-		r = (r * 31) % M;
-	}
-	printf("%d", H);*/
-
-	// 소수 찾기
-	// 소수 = 1을 제외한, 1과 자기자신으로만 나누어 떨어지는 수를 말함.
-	// 수 n이 있으면.. 2부터 n-1까지 나누었을때.. 나머지가 0이면 안됨.
-	
-	/*int N;
-	int prime[100];
-	int count = 0;
-	scanf("%d", &N);
-
-	for (int i = 0; i < N; i++)
-	{
-		scanf("%d", &prime[i]);
-	}
-
-	for (int i = 0; i < N; i++)
-	{
-		int is_prime = 1;
-
-		if (prime[i] == 1)
-			continue;
-
-		for (int j = 2; j < prime[i]; j++)
-		{
-			if (prime[i] % j == 0)
-			{
-				is_prime = 0;
-				break;
-			}
-		}
-
-		if (is_prime)
-			count++;
-	}
-	printf("%d", count);*/
-	
-	/*int n, k;
-	int Bino = 0;
-	scanf("%d %d", &n, &k);
-
-	Bino = Factorial(n) / (Factorial(k) * Factorial(n - k));
-
-	printf("%d", Bino);*/
-	
-	/*int n = 0;
-	char ch1[9];
-	char ch2[9];
-	char ch3[9];
-	scanf("%s %s %s", ch1, ch2, ch3);
-
-	if (isNumeric(ch1))
-	{
-		n = atoi(ch1) + 3;
-	}
-	else if (isNumeric(ch2))
-	{
-		n = atoi(ch2) + 2;
-	}
-	else if (isNumeric(ch3))
-	{
-		n = atoi(ch3) + 1;
-	}
-		
-	if (n % 3 == 0 && n % 5 == 0)
-		printf("FizzBuzz");
-
-	else if (n % 3 == 0 && n % 5 != 0)
-		printf("Fizz");
-
-	else if (n % 3 != 0 && n % 5 == 0)
-		printf("Buzz");
-
-	else
-		printf("%d", n);*/
-	
-	int n1, n2;
-	int gcd = 0;
-	int lcm = 0;
-	int d1 = 1, d2 = 1;
-	scanf("%d %d", &n1, &n2);
-
-	for (int i = 1; i <= n1; i++)
-	{
-		for (int j = 1; j <= n2; j++)
-		{
-			if (n1 % i == 0)
-				d1 = i;
-
-			if (n2 % j == 0)
-				d2 = j;
-
-			if (d1 == d2 && gcd <= d1)
-				gcd = d1;
-		}
-	}
-
-	lcm = gcd * (n1 / gcd) * (n2 / gcd);
-	printf("%d\n%d", gcd, lcm);
 }
+
