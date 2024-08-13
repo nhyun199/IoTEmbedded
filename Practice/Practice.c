@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <math.h>
+#include <time.h>
 
 int AtSign(int A, int B)
 {
@@ -68,6 +70,14 @@ void palindrome(int num)
 		printf("no\n");
 	else
 		printf("yes\n");
+}
+
+void Dice(int s, int dice[])
+{
+	for (int i = 0; i < s; i++)
+	{
+		dice[i] = i+1;
+	}
 }
 
 int main()
@@ -759,55 +769,157 @@ int main()
 				lcm = gcd * (n1 / gcd) * (n2 / gcd);
 				printf("%d\n%d", gcd, lcm);*/
 
-	/*int n = -1;
-	while (1)
+				/*int n = -1;
+				while (1)
+				{
+					scanf("%d", &n);
+					if (n != 0)
+						palindrome(n);
+					else
+						break;
+				}*/
+
+				//int A; // 하루에 올라가는 높이
+				//int B; // 하루에 미끄러지는 높이
+				//int V; // 나무 막대의 높이
+				//int H = 0;
+				////int M = 1000000001;
+				//int day = 0;
+				//scanf("%d %d %d", &A, &B, &V);
+
+				//day = ((V-B-1) / (A - B)) + 1;
+				//printf("%d", day);
+
+				/*int N;
+				scanf("%d", &N);
+
+				int* num = (int*)malloc(N * sizeof(int));
+
+				for (int i = 0; i < N; i++)
+				{
+					scanf("%d", &num[i]);
+				}
+
+				for (int i = 0; i < N-1; i++)
+				{
+					for (int j = 0; j < N - i - 1; j++)
+					{
+						if (num[j] > num[j + 1])
+						{
+							int temp = num[j];
+							num[j] = num[j + 1];
+							num[j + 1] = temp;
+						}
+					}
+				}
+
+				for(int i = 0; i < N; i++)
+				{
+					printf("%d ", num[i]);
+				}
+
+				free(num);*/
+
+				/*int N;
+				scanf("%d", &N);
+				long long fac = 1;
+
+				if(N == 0 || N == 1)
+					printf("1");
+
+				else
+				{
+					for(int i = N; i > 1; i--)
+					{
+						fac = fac * i;
+					}
+					printf("%lld",fac);
+				}*/
+
+				/*int correct[11] = { 12, 11, 11, 10, 9, 9, 9, 8, 7, 6, 6 };
+				int penalty[11] = { 1600, 894, 1327, 1311, 1004, 1178, 1357, 837, 1055, 556, 773 };
+				int N;
+				scanf("%d", &N);
+				printf("%d %d", correct[N - 1], penalty[N - 1]);*/
+
+	/*double a;
+	double b;
+	double c;
+	int count = 1;
+
+	for (; ; )
 	{
-		scanf("%d", &n);
-		if (n != 0)
-			palindrome(n);
-		else
+		scanf("%lf %lf %lf", &a, &b, &c);
+
+		if (a == 0 && b == 0 && c == 0)
 			break;
+
+		else
+		{
+			printf("Triangle #%d\n", count);
+			if (c == -1)
+			{
+				c = sqrt(a * a + b * b);
+				printf("c = %.3lf\n", c);
+			}
+			else if (a == -1 && b < c)
+			{
+				a = sqrt(c * c - b * b);
+				printf("a = %.3lf\n", a);
+			}
+			else if (b == -1 && a < c)
+			{
+				b = sqrt(c * c - a * a);
+				printf("b = %.3lf\n", b);
+			}
+			else
+				printf("Impossible.\n");
+		}
+		count++;
+		printf("\n");
 	}*/
-	
-	//int A; // 하루에 올라가는 높이
-	//int B; // 하루에 미끄러지는 높이
-	//int V; // 나무 막대의 높이
-	//int H = 0;
-	////int M = 1000000001;
-	//int day = 0;
-	//scanf("%d %d %d", &A, &B, &V);
 
-	//day = ((V-B-1) / (A - B)) + 1;
-	//printf("%d", day);
-	
-	int N;	
-	scanf("%d", &N);
+	int S1; // 1~20의 눈
+	int S2; // 1~20의 눈
+	int S3; // 1~40의 눈
+	// 최소 1+1+1 = 3 최대 20+20+40 = 80 3~80
+	int sum[81] = { 0 }; // 3~80의 결과를 저장할 배열
+	int maxcount = 0;
+	int result = 0;
+	scanf("%d %d %d", &S1, &S2, &S3);
 
-	int* num = (int*)malloc(N * sizeof(int));
+	int* dice1 = (int*)calloc(S1, sizeof(int));
+	int* dice2 = (int*)calloc(S2, sizeof(int));
+	int* dice3 = (int*)calloc(S3, sizeof(int));
 
-	for (int i = 0; i < N; i++)
+	Dice(S1, dice1);
+	Dice(S2, dice2);
+	Dice(S3, dice3); // dice 배열에 모든 눈을 넣음 dice[0] = 1, dice[1] = 2...
+
+	for (int i = 0; i < S1; i++)
 	{
-		scanf("%d", &num[i]);
-	}
-
-	for (int i = 0; i < N-1; i++)
-	{
-		for (int j = 0; j < N - i - 1; j++)
-		{			
-			if (num[j] > num[j + 1])
-			{				
-				int temp = num[j];
-				num[j] = num[j + 1];
-				num[j + 1] = temp;
+		for (int j = 0; j < S2; j++)
+		{
+			for (int k = 0; k < S3; k++)
+			{
+				sum[dice1[i] + dice2[j] + dice3[k]]++;
 			}
 		}
 	}
 
-	for(int i = 0; i < N; i++)
+	for (int i = 3; i < 81; i++)
 	{
-		printf("%d ", num[i]);
+		if (maxcount < sum[i])
+		{
+			maxcount = sum[i];
+			result = i;
+		}
 	}
 
-	free(num);
+	printf("%d", result);
+
+	free(dice1);
+	free(dice2);
+	free(dice3);
 }
 
