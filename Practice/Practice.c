@@ -879,47 +879,81 @@ int main()
 		printf("\n");
 	}*/
 
-	int S1; // 1~20의 눈
-	int S2; // 1~20의 눈
-	int S3; // 1~40의 눈
-	// 최소 1+1+1 = 3 최대 20+20+40 = 80 3~80
-	int sum[81] = { 0 }; // 3~80의 결과를 저장할 배열
-	int maxcount = 0;
-	int result = 0;
-	scanf("%d %d %d", &S1, &S2, &S3);
+	//int S1; // 1~20의 눈
+	//int S2; // 1~20의 눈
+	//int S3; // 1~40의 눈
+	//// 최소 1+1+1 = 3 최대 20+20+40 = 80 3~80
+	//int sum[81] = { 0 }; // 3~80의 결과를 저장할 배열
+	//int maxcount = 0;
+	//int result = 0;
+	//scanf("%d %d %d", &S1, &S2, &S3);
 
-	int* dice1 = (int*)calloc(S1, sizeof(int));
-	int* dice2 = (int*)calloc(S2, sizeof(int));
-	int* dice3 = (int*)calloc(S3, sizeof(int));
+	//int* dice1 = (int*)calloc(S1, sizeof(int));
+	//int* dice2 = (int*)calloc(S2, sizeof(int));
+	//int* dice3 = (int*)calloc(S3, sizeof(int));
 
-	Dice(S1, dice1);
-	Dice(S2, dice2);
-	Dice(S3, dice3); // dice 배열에 모든 눈을 넣음 dice[0] = 1, dice[1] = 2...
+	//Dice(S1, dice1);
+	//Dice(S2, dice2);
+	//Dice(S3, dice3); // dice 배열에 모든 눈을 넣음 dice[0] = 1, dice[1] = 2...
 
-	for (int i = 0; i < S1; i++)
+	//for (int i = 0; i < S1; i++)
+	//{
+	//	for (int j = 0; j < S2; j++)
+	//	{
+	//		for (int k = 0; k < S3; k++)
+	//		{
+	//			sum[dice1[i] + dice2[j] + dice3[k]]++;
+	//		}
+	//	}
+	//}
+
+	//for (int i = 3; i < 81; i++)
+	//{
+	//	if (maxcount < sum[i])
+	//	{
+	//		maxcount = sum[i];
+	//		result = i;
+	//	}
+	//}
+
+	//printf("%d", result);
+
+	//free(dice1);
+	//free(dice2);
+	//free(dice3);
+
+	int N; // 참가자의 수 1 ~ 10억
+	int s, m, l, xl, xxl, xxxl; // 티셔츠 사이즈별 신청(필요) 수량 0 ~ 10억 s+ m+ l+ xl+ xxl+ xxxl = N
+	int size[6];
+	int T, P; // T 티셔츠 묶음 수, P 펜의 묶음 수
+	int Tn = 0;
+	int PN = 0;
+	int Pn = 0;
+	scanf("%d", &N);
+	scanf("%d %d %d %d %d %d", &s, &m, &l, &xl, &xxl, &xxxl);
+	scanf("%d %d", &T, &P);
+	
+	size[0] = s;
+	size[1] = m;
+	size[2] = l;
+	size[3] = xl;
+	size[4] = xxl;
+	size[5] = xxxl;
+
+	for (int i = 0; i < 6; i++)
 	{
-		for (int j = 0; j < S2; j++)
-		{
-			for (int k = 0; k < S3; k++)
-			{
-				sum[dice1[i] + dice2[j] + dice3[k]]++;
-			}
-		}
+		if (size[i] % T == 0)
+			Tn += size[i] / T;
+		else
+			Tn += size[i] / T + 1; // 올림처리		
 	}
 
-	for (int i = 3; i < 81; i++)
-	{
-		if (maxcount < sum[i])
-		{
-			maxcount = sum[i];
-			result = i;
-		}
-	}
+	PN = N / P;
+	if (N % P == 0)
+		Pn = 0;
+	else
+		Pn = N % P;
 
-	printf("%d", result);
-
-	free(dice1);
-	free(dice2);
-	free(dice3);
+	printf("%d\n%d %d", Tn, PN, Pn);
 }
 
