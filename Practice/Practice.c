@@ -1063,7 +1063,7 @@ int main()
 	//	printf("%f\n", F * t);
 	//}
 	
-	int A, B, C, N;
+	/*int A, B, C, N;
 	scanf("%d %d %d %d", &A, &B, &C, &N);
 	int count = 0;
 	for (int i = 0; i <= N / A; i++)
@@ -1082,7 +1082,7 @@ int main()
 	if (count > 0)
 		printf("1");
 	else
-		printf("0");
+		printf("0");*/
 }
 
 	
