@@ -80,6 +80,12 @@ void Dice(int s, int dice[])
 	}
 }
 
+int MenOfPassion(int A[], int n)
+{
+	int i = n / 2;
+	return A[i];
+}
+
 // 분해합을 구하는 함수 범위 : 최대 6자리까지
 // n = 분해합을 구하려는 수
 int digitsum(int n)
@@ -980,23 +986,105 @@ int main()
 
 	//printf("%d\n%d %d", Tn, PN, Pn);
 
-	int N; // 생성자를 찾을 자연수
-	scanf("%d", &N);
-	int M = 0; // 생성자
-	for (int i = 1; i < 1000000; i++)
+	//int N; // 생성자를 찾을 자연수
+	//scanf("%d", &N);
+	//int M = 0; // 생성자
+	//for (int i = 1; i < 1000000; i++)
+	//{
+	//	if (digitsum(i) == N)
+	//	{
+	//		M = i;
+	//		break;
+	//	}
+	//	else
+	//		M = 0;
+	//}
+	//printf("%d", M);
+
+	/*int L;
+	int l = 0;
+	scanf("%d", &L);
+
+	for (int t = 1; t <= 200000; t++)
 	{
-		if (digitsum(i) == N)
+		l = t * 5;
+		if (L < l)
 		{
-			M = i;
+			printf("%d", t);
 			break;
-		}
-		else
-			M = 0;
+	}*/
+
+	/*char S[10];
+	scanf("%s", S);
+	if (strcmp(S, "SONGDO") == 0)
+		printf("HIGHSCHOOL");
+	else if (strcmp(S, "CODE"))
+		printf("MASTER");
+	else if (strcmp(S, "2023") == 0)
+		printf("0611");
+	else if (strcmp(S, "ALGORITHM") == 0)
+		printf("CONTEST");*/
+
+	// 세 제곱의 합?
+	/*int N;
+	scanf("%d", &N);
+	int sum = 0;
+	
+	for (int i = 1; i <= N; i++)
+	{
+		sum += i;
 	}
-	printf("%d", M);
+	printf("%d\n", sum);
+	printf("%d\n", sum * sum);
 
+	sum = 0;
+	for (int i = 1; i <= N; i++)
+	{
+		
+		sum += i * i * i;
+	}
+	printf("%d", sum);*/
 	
+	//int P; // 케이스 수
+	//scanf("%d", &P);
 
+	//int N; // 케이스 번호
+	//float D ; // 철로의 길이
+	//float A; // 기차의 속도
+	//float B;
+	//float F; // 파리의 속도
+	//float t = 0;
+	//
+	//for (int i = 0; i < P; i++)
+	//{
+	//	scanf("%d %f %f %f %f", &N, &D, &A, &B, &F);
+	//	printf("%d ", N);
+	//	t = D / (A + B);
+	//	printf("%f\n", F * t);
+	//}
 	
+	int A, B, C, N;
+	scanf("%d %d %d %d", &A, &B, &C, &N);
+	int count = 0;
+	for (int i = 0; i <= N / A; i++)
+	{
+		for (int j = 0; j <= N / B; j++)
+		{
+			for (int k = 0; k <= N / C; k++)
+			{
+				if (A * i + B * j + C * k == N)
+				{
+					count++;
+				}
+			}
+		}
+	}
+	if (count > 0)
+		printf("1");
+	else
+		printf("0");
 }
+
+	
+
 
