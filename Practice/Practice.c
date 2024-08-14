@@ -80,6 +80,30 @@ void Dice(int s, int dice[])
 	}
 }
 
+// 분해합을 구하는 함수 범위 : 최대 6자리까지
+// n = 분해합을 구하려는 수
+int digitsum(int n)
+{
+	//int N[6] = { 0 };
+	int sum = n;
+	/*N[0] = n / 100000;
+	N[1] = (n % 100000) / 10000;
+	N[2] = (n % 10000) / 1000;
+	N[3] = (n % 1000) / 100;
+	N[4] = (n % 100) / 10;
+	N[5] = (n % 10);
+	for (int i = 0; i < 6; i++)
+	{
+		sum += N[i];
+	}*/
+	while (n > 0)
+	{
+		sum += n % 10;
+		n /= 10;
+	}
+	return sum;
+}
+
 int main()
 {
 	/*min = a[0];
@@ -922,38 +946,57 @@ int main()
 	//free(dice2);
 	//free(dice3);
 
-	int N; // 참가자의 수 1 ~ 10억
-	int s, m, l, xl, xxl, xxxl; // 티셔츠 사이즈별 신청(필요) 수량 0 ~ 10억 s+ m+ l+ xl+ xxl+ xxxl = N
-	int size[6];
-	int T, P; // T 티셔츠 묶음 수, P 펜의 묶음 수
-	int Tn = 0;
-	int PN = 0;
-	int Pn = 0;
+	//int N; // 참가자의 수 1 ~ 10억
+	//int s, m, l, xl, xxl, xxxl; // 티셔츠 사이즈별 신청(필요) 수량 0 ~ 10억 s+ m+ l+ xl+ xxl+ xxxl = N
+	//int size[6];
+	//int T, P; // T 티셔츠 묶음 수, P 펜의 묶음 수
+	//int Tn = 0;
+	//int PN = 0;
+	//int Pn = 0;
+	//scanf("%d", &N);
+	//scanf("%d %d %d %d %d %d", &s, &m, &l, &xl, &xxl, &xxxl);
+	//scanf("%d %d", &T, &P);
+	//
+	//size[0] = s;
+	//size[1] = m;
+	//size[2] = l;
+	//size[3] = xl;
+	//size[4] = xxl;
+	//size[5] = xxxl;
+
+	//for (int i = 0; i < 6; i++)
+	//{
+	//	if (size[i] % T == 0)
+	//		Tn += size[i] / T;
+	//	else
+	//		Tn += size[i] / T + 1; // 올림처리		
+	//}
+
+	//PN = N / P;
+	//if (N % P == 0)
+	//	Pn = 0;
+	//else
+	//	Pn = N % P;
+
+	//printf("%d\n%d %d", Tn, PN, Pn);
+
+	int N; // 생성자를 찾을 자연수
 	scanf("%d", &N);
-	scanf("%d %d %d %d %d %d", &s, &m, &l, &xl, &xxl, &xxxl);
-	scanf("%d %d", &T, &P);
-	
-	size[0] = s;
-	size[1] = m;
-	size[2] = l;
-	size[3] = xl;
-	size[4] = xxl;
-	size[5] = xxxl;
-
-	for (int i = 0; i < 6; i++)
+	int M = 0; // 생성자
+	for (int i = 1; i < 1000000; i++)
 	{
-		if (size[i] % T == 0)
-			Tn += size[i] / T;
+		if (digitsum(i) == N)
+		{
+			M = i;
+			break;
+		}
 		else
-			Tn += size[i] / T + 1; // 올림처리		
+			M = 0;
 	}
+	printf("%d", M);
 
-	PN = N / P;
-	if (N % P == 0)
-		Pn = 0;
-	else
-		Pn = N % P;
+	
 
-	printf("%d\n%d %d", Tn, PN, Pn);
+	
 }
 
