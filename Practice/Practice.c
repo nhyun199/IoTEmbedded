@@ -1091,18 +1091,28 @@ int main()
 	// 61 ~	90	+30	5라인
 	// 13일때 2번째 라인이므로 3, 58은 4번째라인이므로 5
 	// 주어진 N이 몇번째 라인인지 알 수 있는가?
+	
 	int N;
-	int honey = 2;
 	scanf("%d", &N);
-	// honey + 6*i
-	// i = 0 부터 시작하면? 2
-	for (int i = 0; ; i++)
+	// honey + 6*i <= N < honey + 6 * (i+1)
+	// i = 0 => 2 <= N < 8
+	// i = 1 => 8 <= N < 20
+	// 2 ~ 7
+	// 
+	for (int i = 1; ; i++)
 	{
-		if (N >= honey + 6 * i && N < honey + 6 * (i + 1))
+		int honey1 = 3 * (i * i) - 3 * i + 2;
+		int honey2 = 3 * (i * i) + 3 * i + 1;
+		if (honey1 <= N && honey2 >= N)
 		{
-			printf("%d", i + 2);
+			printf("%d", i+1);
 			break;
-		}			
+		}
+		else if (N == 1)
+		{
+			printf("1");
+			break;
+		}
 	}
 	
 }
