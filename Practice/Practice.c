@@ -1092,13 +1092,8 @@ int main()
 	// 13일때 2번째 라인이므로 3, 58은 4번째라인이므로 5
 	// 주어진 N이 몇번째 라인인지 알 수 있는가?
 	
-	int N;
-	scanf("%d", &N);
-	// honey + 6*i <= N < honey + 6 * (i+1)
-	// i = 0 => 2 <= N < 8
-	// i = 1 => 8 <= N < 20
-	// 2 ~ 7
-	// 
+	/*int N;
+	scanf("%d", &N);	
 	for (int i = 1; ; i++)
 	{
 		int honey1 = 3 * (i * i) - 3 * i + 2;
@@ -1113,8 +1108,51 @@ int main()
 			printf("1");
 			break;
 		}
+	}*/
+
+	/*int N, M;
+	int num[100] = {0};
+	int sum = 0;
+	scanf("%d %d", &N, &M);
+
+	for (int i = 0; i < N; i++)
+	{
+		scanf("%d", &num[i]);
 	}
+
+	for(int i = 0; i < N-2; i++)
+		for(int j = i+1; j < N-1; j++)
+			for (int k = j + 1; k < N; k++)
+			{
+				if (sum < num[i] + num[j] + num[k] && num[i] + num[j] + num[k] <= M)
+					sum = num[i] + num[j] + num[k];
+			}
+
+	printf("%d", sum);*/
 	
+	int T;
+	scanf("%d", &T);
+	int k, n;
+	int sum = 0;
+	int A[15][15] = { 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14 };
+	
+	for (int i = 1; i < 15; i++)
+	{
+		for (int j = 1; j < 15; j++)
+		{
+			sum = sum + A[i-1][j];
+			A[i][j] = sum;
+		}
+		sum = 0;
+	}
+
+	for (int i = 0; i < T; i++)
+	{
+		scanf("%d %d", &k, &n);
+		printf("%d\n", A[k][n]);
+	}
+		
+
 }
 
 	
