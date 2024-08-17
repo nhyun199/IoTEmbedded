@@ -131,6 +131,23 @@ void sort(int len, int max, int min, int A[], int B[], int C[])
 		B[A[i] - min]--;
 	}
 }
+
+int compare(const void* a, const void* b)
+{
+	if (*(int*)a > *(int*)b)
+		return 1;
+	else if (*(int*)a < *(int*)b)
+		return -1;
+	else
+		return 0;
+}
+
+typedef struct
+{
+	int age;
+	char id[101];
+} INFO;
+
 int main()
 {
 	/*min = a[0];
@@ -1174,7 +1191,7 @@ int main()
 	}
 		*/
 	
-	int N;
+	/*int N;
 	scanf("%d", &N);
 	int max = 0;
 	int min = 0;
@@ -1200,7 +1217,57 @@ int main()
 
 	free(A);
 	free(B);
-	free(C);
+	free(C);*/
+
+	//int N; 
+	//scanf("%d", &N);
+	//int(*physical)[2] = (int(*)[2])calloc(N, sizeof(int[2])); 
+	//int* place = (int*)calloc(N, sizeof(int)); 
+
+	//for (int i = 0; i < N; i++)
+	//{
+	//	for (int j = 0; j < 2; j++)		
+	//		scanf("%d", &physical[i][j]);
+	//}
+
+	//for (int i = 0; i < N; i++)
+	//{
+	//	for (int j = 0; j < N; j++)
+	//	{
+	//		if (i != j)
+	//		{
+	//			if (physical[i][0] < physical[j][0] && physical[i][1] < physical[j][1])
+	//				place[i]++;
+	//		}
+	//	}
+	//}
+	//	
+	//for (int i = 0; i < N; i++)
+	//{
+	//	printf("%d ", place[i] + 1);
+	//}
+
+	//free(physical);
+	//free(place);
+
+	int N;
+	scanf("%d", &N);
+	INFO* info = (INFO*)malloc(N * sizeof(INFO));
+
+	for (int i = 0; i < N; i++)
+	{
+		scanf("%d %s", &info[i].age, info[i].id);
+	}
+
+	qsort(info, N, sizeof(INFO), compare);
+
+	for (int i = 0; i < N; i++)
+	{
+		printf("%d %s\n", info[i].age, info[i].id);
+	}
+	
+
+	free(info);	
 }
 
 	
