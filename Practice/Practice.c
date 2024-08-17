@@ -110,6 +110,27 @@ int digitsum(int n)
 	return sum;
 }
 
+void sort(int len, int max, int min, int A[], int B[], int C[])
+{
+	// 음수도 들어올 수 있다.
+	int range = max - min + 1;
+
+	for (int i = 0; i < len; i++)
+	{
+		B[A[i] - min]++;
+	}
+
+	for (int i = 1; i < range; i++)
+	{
+		B[i] = B[i] + B[i - 1];
+	}
+
+	for (int i = len-1; i >= 0; i--)
+	{
+		C[B[A[i] - min] - 1] = A[i];
+		B[A[i] - min]--;
+	}
+}
 int main()
 {
 	/*min = a[0];
@@ -1130,7 +1151,7 @@ int main()
 
 	printf("%d", sum);*/
 	
-	int T;
+	/*int T;
 	scanf("%d", &T);
 	int k, n;
 	int sum = 0;
@@ -1151,8 +1172,35 @@ int main()
 		scanf("%d %d", &k, &n);
 		printf("%d\n", A[k][n]);
 	}
-		
+		*/
+	
+	int N;
+	scanf("%d", &N);
+	int max = 0;
+	int min = 0;
 
+	int* A = (int*)calloc(N, sizeof(int));
+	for (int i = 0; i < N; i++)
+	{
+		scanf("%d", &A[i]);
+		if (max < A[i]) max = A[i];
+		if (min > A[i]) min = A[i];
+	}
+
+	int range = max - min + 1;
+
+	int* B = (int*)calloc(range, sizeof(int));
+	int* C = (int*)calloc(N, sizeof(int));
+
+	sort(N, max, min, A, B, C);
+	for (int i = 0; i < N; i++)
+	{
+		printf("%d\n", C[i]);
+	}
+
+	free(A);
+	free(B);
+	free(C);
 }
 
 	
