@@ -142,6 +142,19 @@ int compare(const void* a, const void* b)
 		return 0;
 }
 
+int compare2(const void* a, const void* b)
+{
+	int* coordA = (int*)a;
+	int* coordB = (int*)b;
+
+	if (coordA[0] != coordB[0])
+	{
+		return coordA[0] - coordB[0];
+	}
+	return coordA[1] - coordB[1];
+
+}
+
 typedef struct
 {
 	int age;
@@ -1250,7 +1263,7 @@ int main()
 	//free(physical);
 	//free(place);
 
-	int N;
+	/*int N;
 	scanf("%d", &N);
 	INFO* info = (INFO*)malloc(N * sizeof(INFO));
 
@@ -1267,7 +1280,31 @@ int main()
 	}
 	
 
-	free(info);	
+	free(info);*/	
+	
+	int N;
+	scanf("%d", &N);
+
+	int(*coord)[2] = (int(*)[2])calloc(N, sizeof(int[2]));
+
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < 2; j++)
+			scanf("%d", &coord[i][j]);
+	}
+
+	qsort(coord, N, sizeof(coord[0]), compare2);
+
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < 2; j++)
+		{
+			printf("%d ", coord[i][j]);
+		}
+		printf("\n");
+	}
+
+	free(coord);
 }
 
 	
