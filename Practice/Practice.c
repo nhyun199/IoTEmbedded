@@ -155,6 +155,16 @@ int compare2(const void* a, const void* b)
 
 }
 
+int compare3(const void* a, const void* b)
+{
+	char* A = (char*)a;
+	char* B = (char*)b;
+
+	if (strlen(A) != strlen(B))
+		return strlen(A) - strlen(B);
+
+	return strcmp(A, B);
+}
 typedef struct
 {
 	int age;
@@ -1282,7 +1292,7 @@ int main()
 
 	free(info);*/	
 	
-	int N;
+	/*int N;
 	scanf("%d", &N);
 
 	int(*coord)[2] = (int(*)[2])calloc(N, sizeof(int[2]));
@@ -1304,7 +1314,28 @@ int main()
 		printf("\n");
 	}
 
-	free(coord);
+	free(coord);*/
+
+	int N;
+	scanf("%d", &N);
+
+	char(*S)[51] = (char(*)[51])malloc(N * sizeof(char[51]));
+
+	for (int i = 0; i < N; i++)
+	{
+		scanf("%s", S[i]);
+	}
+
+	qsort(S, N, sizeof(S[0]), compare3);
+
+	printf("%s\n", S[0]);
+	for (int i = 1; i < N; i++)
+	{
+		if(strcmp(S[i], S[i-1]) != 0)
+		printf("%s\n", S[i]);
+	}
+
+	free(S);
 }
 
 	
