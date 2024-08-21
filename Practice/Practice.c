@@ -1480,25 +1480,32 @@ int main()
 	else
 		printf("H");*/
 	
-	int N;
-	scanf("%d", &N);
-
-	int queue[500000];
+	int N = 10;
+	int queue[100];
 	int front = 0;
 	int back = 0;
 
 	for (int i = 1; i <= N; i++)
 	{
-		queue[back++] = i;
-	}
+		queue[back] = i;
+		back++;
+	} // back = 10까지 증가함
 
-	while (front + 1 != back)
+	/*printf("%d\n", back);
+
+	for (int i = 0; i < N; i++)
 	{
-		front++;
-		queue[back++] = queue[front];
-	}
+		printf("%d ", queue[i]);
+	}*/
 
-	printf("%d", queue[front]);
+	while (front+1 != back)
+	{	// queue[10] = 0
+		// 1=0 2 3 4 5 6 7 8 9 10 0 0 0 0 0 0
+		front++; // front = 1, 2=1 3 4 5 6 7 8 9 10
+		queue[back] = queue[front]; // queue[10] = queue[1] 3=2 4 5 6 7 8 9 10 2 0 0 0 0 0 0 0
+		back++; // back = 11		
+	}
+	printf("%d", queue[back]);
 }
 
 	
