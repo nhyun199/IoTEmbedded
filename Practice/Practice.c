@@ -6,6 +6,7 @@
 #include <math.h>
 #include <time.h>
 
+
 int AtSign(int A, int B)
 {
 	int C;
@@ -165,6 +166,32 @@ int compare3(const void* a, const void* b)
 
 	return strcmp(A, B);
 }
+
+void del(int** A, int* length)
+{
+	if (*length <= 1) return;
+
+	for (int i = 1; i < *length; i++)
+		(*A)[i - 1] = (*A)[i];
+
+	(*length)--;
+	int* temp = (int*)realloc(*A, (*length) * sizeof(int));
+	*A = temp;
+}
+
+void rotateFirstToLast(int* A, int length)
+{
+	if (length <= 1) return;
+
+	int temp = 0;
+	temp = A[0];
+	
+	for (int i = 1; i < length; i++)
+		A[i - 1] = A[i];
+
+	A[length - 1] = temp;
+}
+
 typedef struct
 {
 	int age;
@@ -1316,7 +1343,7 @@ int main()
 
 	free(coord);*/
 
-	int N;
+	/*int N;
 	scanf("%d", &N);
 
 	char(*S)[51] = (char(*)[51])malloc(N * sizeof(char[51]));
@@ -1335,7 +1362,143 @@ int main()
 		printf("%s\n", S[i]);
 	}
 
-	free(S);
+	free(S);*/
+
+	/*int H, M;
+	scanf("%d %d", &H, &M);
+
+	printf("%d", (H - 9) * 60 + M);*/
+
+	/*int byte[8];
+	int correct = 0;
+	for (int i = 0; i < 8; i++)
+	{
+		scanf("%d", &byte[i]);
+	}
+
+	for (int i = 0; i < 8; i++)
+	{
+		if (byte[i] == 0 || byte[i] == 1);
+		else
+			correct++;
+	}
+
+	if (correct == 0)
+		printf("S");
+	else
+		printf("F");*/
+
+	/*int N;
+	int D = 0;
+	int P = 0;
+	char winner;
+
+	scanf("%d", &N);
+	for (int i = 0; i < N; i++)
+	{
+		scanf(" %c", &winner);
+
+		if (winner == 'D')
+			D++;
+		else
+			P++;
+
+		if (D - P == 2 || P - D == 2)
+			break;
+	}
+	printf("%d:%d", D, P);*/
+
+	/*int T;
+	scanf("%d", &T);
+	int N;
+
+	for (int i = 1; i <= T; i++)
+	{
+		scanf("%d", &N);
+		if (N > 4500)
+			printf("Case #%d : Round 1\n", i);
+
+		else if (N <= 4500 && N > 1000)
+			printf("Case #%d : Round 2\n", i);
+
+		else if (N <= 1000 && N > 25)
+			printf("Case #%d : Round 3\n", i);
+
+		else if (N <= 25)
+			printf("Case #%d : World Finals\n", i);
+	}*/
+	
+	//int N, M;
+	//scanf("%d %d", &N, &M);
+
+	//for (int i = 0; i < N; i++) // 0 1 2 3 4 5 6 7
+	//{
+	//	if (i % 2 == 0)
+	//		printf("*");
+	//	else
+	//		printf(".");
+
+	//	for (int j = 0; j < M-1; j++) // 0 1 2 3 4 5 6
+	//	{
+	//		if (M == 1)
+	//			break;
+
+	//		if (j % 2 == 0 && i % 2 == 0)
+	//			printf(".");
+	//		else if(j % 2 != 0 && i % 2 == 0)
+	//			printf("*");
+	//		else if (j % 2 == 0 && i % 2 != 0)
+	//			printf("*");
+	//		else if (j % 2 != 0 && i % 2 != 0)
+	//			printf(".");
+
+	//	}
+	//	printf("\n");
+	//}
+	
+	//char S[101]; // 65 ~ 90
+	//scanf("%s", S);
+	//int len = strlen(S);
+
+	//for (int i = 0; i < len; i++)
+	//{
+	//	if (S[i] >= 65 && S[i] <= 90)
+	//		printf("%c", S[i]);
+	//}
+
+	/*int N;
+	scanf("%d", &N);
+	int case1 = N * 0.78;
+	int case2 = N - (N * 0.2 * 0.22);
+	printf("%d %d", case1, case2);*/
+
+	/*float s1, s2;
+	scanf("%f %f", &s1, &s2);
+	
+	if (s1 >= s2 / 2)
+		printf("E");
+	else
+		printf("H");*/
+	
+	int N;
+	scanf("%d", &N);
+
+	int queue[500000];
+	int front = 0;
+	int back = 0;
+
+	for (int i = 1; i <= N; i++)
+	{
+		queue[back++] = i;
+	}
+
+	while (front + 1 != back)
+	{
+		front++;
+		queue[back++] = queue[front];
+	}
+
+	printf("%d", queue[front]);
 }
 
 	
