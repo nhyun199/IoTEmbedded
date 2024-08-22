@@ -1480,8 +1480,9 @@ int main()
 	else
 		printf("H");*/
 	
-	int N = 10;
-	int queue[100];
+	/*int N;
+	scanf("%d", &N);
+	int* queue = (int*)malloc(2 * N * sizeof(int));
 	int front = 0;
 	int back = 0;
 
@@ -1489,23 +1490,40 @@ int main()
 	{
 		queue[back] = i;
 		back++;
-	} // back = 10까지 증가함
-
-	/*printf("%d\n", back);
-
-	for (int i = 0; i < N; i++)
-	{
-		printf("%d ", queue[i]);
-	}*/
-
-	while (front+1 != back)
-	{	// queue[10] = 0
-		// 1=0 2 3 4 5 6 7 8 9 10 0 0 0 0 0 0
-		front++; // front = 1, 2=1 3 4 5 6 7 8 9 10
-		queue[back] = queue[front]; // queue[10] = queue[1] 3=2 4 5 6 7 8 9 10 2 0 0 0 0 0 0 0
-		back++; // back = 11		
 	}
-	printf("%d", queue[back]);
+	
+	while (front+1 != back)
+	{
+		front++;
+		queue[back] = queue[front];
+		front++;
+		back++;	
+	}
+	printf("%d", queue[front]);
+
+	free(queue);*/
+
+	/*int N;
+	scanf("%d", &N);
+	int min = 1000000;
+
+	for (int i = 0; i <= N / 3; i++)
+	{
+		for (int j = 0; j <= N / 5; j++)
+		{
+			if (N == (3 * i) + (5 * j))
+			{
+				if (min > i + j)
+					min = i + j;
+			}
+		}
+	}
+
+	if (min != 1000000)
+		printf("%d", min);
+	else
+		printf("-1");*/
+
 }
 
 	
