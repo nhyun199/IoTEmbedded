@@ -16,7 +16,16 @@ void push(int **queue, int *back, int X)
 	(*back)++;
 }
 
-void pop() {}
+void pop(int **queue, int *front) 
+{
+	if (*queue == NULL)
+		printf("-1\n");
+	else
+	{
+		printf("%d", (*queue)[*front]); //
+
+	}
+}
 void size() {}
 void empty() {}
 void Front() {}
