@@ -16,14 +16,19 @@ void push(int **queue, int *back, int X)
 	(*back)++;
 }
 
-void pop(int **queue, int *front) 
+void pop(int **queue, int *back)
 {
 	if (*queue == NULL)
 		printf("-1\n");
 	else
 	{
-		printf("%d", (*queue)[*front]); //
+		printf("%d", (*queue)[0]);
+		(*back)--;
 
+		for (int i = 0; i < (*back) - 1; i++)
+			(*queue)[i] = (*queue)[i + 1];
+
+		*queue = (int*)realloc(*queue, (*back) * sizeof(int));
 	}
 }
 void size() {}
