@@ -31,4 +31,5 @@ void insert(char* key, int value) // 해시 충돌 고려하지 않음
 	Node* newnode = (Node*)malloc(sizeof(Node));
 	newnode->key = strdup(key);
 	newnode->value = value;
+	newnode->next = newnode;
 }
