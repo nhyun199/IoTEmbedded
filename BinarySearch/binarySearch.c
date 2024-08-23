@@ -19,13 +19,32 @@ int binsearch(int *arr, int n, int key)
 	int low = 0;
 	int high = n - 1;
 	int mid = 0;
+	int count = 0;
 
 	while (low <= high)
 	{
 		mid = (low + high) / 2;
 
 		if (key == arr[mid])
-			return 1;
+		{
+			count++;
+
+			int left = mid - 1;
+			while (left >= 0 && arr[left] == key)
+			{
+				count++;
+				left--;
+			}
+
+			int right = mid + 1;
+			while (right < n && arr[right] == key)
+			{
+				count++;
+				right++;
+			}
+
+			break;
+		}
 
 		else if (key < arr[mid])
 		{
@@ -36,7 +55,7 @@ int binsearch(int *arr, int n, int key)
 			low = mid + 1;
 		}
 	}
-	return 0;
+	return count;
 }
 
 int main()
@@ -52,8 +71,8 @@ int main()
 	qsort(a, N, sizeof(a[0]), compare);
 
 	scanf("%d", &M);
-	int* b = (int*)malloc(N * sizeof(int));
-	for (int i = 0; i < N; i++)
+	int* b = (int*)malloc(M * sizeof(int));
+	for (int i = 0; i < M; i++)
 	{
 		scanf("%d", &b[i]);
 	}
@@ -62,6 +81,6 @@ int main()
 	{
 		int result;
 		result = binsearch(a, N, b[i]);
-		printf("%d\n", result);
+		printf("%d ", result);
 	}
 }
