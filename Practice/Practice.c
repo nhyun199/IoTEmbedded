@@ -1524,6 +1524,65 @@ int main()
 	else
 		printf("-1");*/
 
+	int N;
+	scanf("%d", N);
+	int sum = 0;
+	int mean = 0;
+	int median = 0;
+	int mode = 0;
+	int range = 0;
+	int max = 0;
+	int min = 0;
+	int* num = (int*)malloc(N * sizeof(int));
+	
+
+	for (int i = 0; i < N; i++)
+	{
+		scanf("%d", &num[i]);
+		sum += num[i];
+
+		if (num[i] < 0)
+		{
+
+		}
+
+		if (max < num[i])
+			max = num[i];
+
+		if (min > num[i])
+			min = num[i];
+	}
+
+	int* count = (int*)calloc(max - min + 1, sizeof(int));
+
+	median = sum / N;
+	
+	if (N == 1)
+	{
+		range = 1;
+	}
+	else
+		range = abs(max - min);
+
+	qsort(num, N, sizeof(num[0]), compare);
+	 
+	if (N == 1)
+	{
+		median = num[0];
+	}
+	else
+	{
+		median = num[N / 2];
+	}
+
+	if (N == 1)
+	{
+		mode = num[0];
+	}
+	else
+	{
+		for(int i = 0; i )
+	}
 }
 
 	
