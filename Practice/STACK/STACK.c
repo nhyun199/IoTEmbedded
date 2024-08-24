@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <string.h>
 
-// size empty top
 void push(int **stack, int *size, int X)
 {
 	*size += 1;
@@ -14,11 +13,11 @@ void push(int **stack, int *size, int X)
 
 void pop(int **stack, int *size)
 {
-	if (*stack == NULL)
-		printf("-1\n");
+	if (*stack == NULL) {}
+		//printf("-1\n");
 	else
 	{
-		printf("%d\n", (*stack)[*size-1]);
+		//printf("%d\n", (*stack)[*size-1]);
 		*size -= 1;
 		if (*size == 0)
 		{
@@ -56,38 +55,29 @@ void top(int *stack, int size)
 
 int main()
 {
-	int N;
-	scanf("%d", &N);
+	int k;
+	scanf("%d", &k);
 	int size = 0;
 	int* stack = NULL;
-	char command[10];
+	int sum = 0;	
+	int num;
 
-	for (int i = 0; i < N; i++)
+	for (int i = 0; i < k; i++)
 	{
-		scanf("%s", command);
-		if (strcmp(command, "push") == 0)
-		{
-			int X;
-			scanf("%d", &X);
-			push(&stack, &size, X);
-		}
-		else if (strcmp(command, "pop") == 0)
-		{
+		scanf("%d", &num);
+
+		if (num == 0)
 			pop(&stack, &size);
-		}
-		else if (strcmp(command, "size") == 0)
-		{
-			Size(size);
-		}
-		else if (strcmp(command, "empty") == 0)
-		{
-			empty(stack);
-		}
-		else if (strcmp(command, "top") == 0)
-		{
-			top(stack, size);
-		}
+
+		else
+			push(&stack, &size, num);
+	}
+	
+	for (int i = 0; i < size; i++)
+	{
+		sum += stack[i];
 	}
 
+	printf("%d", sum);
 	free(stack);
 }
