@@ -1,4 +1,4 @@
-#define _CRT_SECRUE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -40,6 +40,8 @@ int main()
 	int top = 0;
 	int last = 0;
 	int err = 0;
+	char result[200000];
+	int index = 0;
 
 	scanf("%d", &n);
 
@@ -47,31 +49,45 @@ int main()
 	{
 		scanf("%d", &num);
 
-		for (int j = last + 1; j <= num; j++)
+		if (num > top)
 		{
-			if (top == num)
-			{
-				pop(&stack, &size);
-				if (stack == NULL || size == 0)
-				{
-					top = 0;
-				}
-				else
-					top = stack[size - 1];
-			}
-
-			else if (top < num)
+			for (int j = last+1; j <= num; j++)
 			{
 				push(&stack, &size, j);
-				last = j;
-				top = stack[size - 1];
+				result[index++] = '+';
 			}
-
-			else if (top > num)
-			{
-				printf("NO");
-				break;
-			}
+			pop(&stack, &size);
+			result[index++] = '-';
+			top = (size > 0) ? stack[size - 1] : 0;
+			last = num;
 		}
-	}		
+
+		else if (num == top)
+		{
+			pop(&stack, &size);
+			result[index++] = '-';
+			top = (size > 0) ? stack[size - 1] : 0;
+		}
+
+		else if (num < top)
+		{
+			err = 1;
+		}
+	}
+
+	if (err == 1)
+	{
+		printf("NO");
+	}
+
+	else
+	{
+		for (int i = 0; i < index; i++)
+		{
+			printf("%c\n", result[i]);
+		}
+	}
+
+	if (stack != NULL)
+		free(stack);
 }
