@@ -1525,26 +1525,22 @@ int main()
 		printf("-1");*/
 
 	int N;
-	scanf("%d", N);
+	scanf("%d", &N);
+	int* num = (int*)malloc(N * sizeof(int));
+
 	int sum = 0;
 	int mean = 0;
-	int median = 0;
 	int mode = 0;
+	int median = 0;
 	int range = 0;
 	int max = 0;
 	int min = 0;
-	int* num = (int*)malloc(N * sizeof(int));
-	
+	int max_freq = 0;
 
 	for (int i = 0; i < N; i++)
 	{
 		scanf("%d", &num[i]);
 		sum += num[i];
-
-		if (num[i] < 0)
-		{
-
-		}
 
 		if (max < num[i])
 			max = num[i];
@@ -1552,37 +1548,48 @@ int main()
 		if (min > num[i])
 			min = num[i];
 	}
-
-	int* count = (int*)calloc(max - min + 1, sizeof(int));
-
-	median = sum / N;
 	
-	if (N == 1)
-	{
-		range = 1;
-	}
-	else
-		range = abs(max - min);
+	qsort(num, N, sizeof(num[0]), compare); // 중앙값 계산 위해서 오름차순 정렬함
 
-	qsort(num, N, sizeof(num[0]), compare);
-	 
+	for (int i = 0; i < N; i++)
+	{
+		int count = 1;
+		for (int j = i + 1; j < N; j++)
+		{
+			if (num[i] == num[j])
+				count++;
+		}
+
+		if (count > max_freq)
+		{
+			max_freq = count;
+			mode = num[i];
+		}
+		else if (count == max_freq && num[i] < mode)
+		{
+			mode = num[i];
+		}
+	}
+
 	if (N == 1)
 	{
+		mean = num[0];
 		median = num[0];
+		range = 0;
 	}
+		
 	else
 	{
-		median = num[N / 2];
+		mean = sum / N;
+		median = num[(N + 1) / 2 - 1];
+		range = max - min;
 	}
 
-	if (N == 1)
-	{
-		mode = num[0];
-	}
-	else
-	{
-		for(int i = 0; i )
-	}
+	printf("%d\n", mean);
+	printf("%d\n", median);
+	printf("%d\n", mode);
+	printf("%d\n", range);
+
 }
 
 	
