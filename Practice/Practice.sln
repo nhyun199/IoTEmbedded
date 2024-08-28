@@ -25,6 +25,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "prime_Number", "..\prime_Nu
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "difficulty", "..\difficulty\difficulty.vcxproj", "{C78157BE-FC34-4EBB-B63F-7B4C336E082F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Josephus", "..\Josephus\Josephus.vcxproj", "{B08E0176-C5C3-4734-929A-5335A56C4978}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -121,6 +123,14 @@ Global
 		{C78157BE-FC34-4EBB-B63F-7B4C336E082F}.Release|x64.Build.0 = Release|x64
 		{C78157BE-FC34-4EBB-B63F-7B4C336E082F}.Release|x86.ActiveCfg = Release|Win32
 		{C78157BE-FC34-4EBB-B63F-7B4C336E082F}.Release|x86.Build.0 = Release|Win32
+		{B08E0176-C5C3-4734-929A-5335A56C4978}.Debug|x64.ActiveCfg = Debug|x64
+		{B08E0176-C5C3-4734-929A-5335A56C4978}.Debug|x64.Build.0 = Debug|x64
+		{B08E0176-C5C3-4734-929A-5335A56C4978}.Debug|x86.ActiveCfg = Debug|Win32
+		{B08E0176-C5C3-4734-929A-5335A56C4978}.Debug|x86.Build.0 = Debug|Win32
+		{B08E0176-C5C3-4734-929A-5335A56C4978}.Release|x64.ActiveCfg = Release|x64
+		{B08E0176-C5C3-4734-929A-5335A56C4978}.Release|x64.Build.0 = Release|x64
+		{B08E0176-C5C3-4734-929A-5335A56C4978}.Release|x86.ActiveCfg = Release|Win32
+		{B08E0176-C5C3-4734-929A-5335A56C4978}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
