@@ -1524,72 +1524,124 @@ int main()
 	else
 		printf("-1");*/
 
-	int N;
-	scanf("%d", &N);
-	int* num = (int*)malloc(N * sizeof(int));
+	//int N;
+	//scanf("%d", &N);
+	//int* num = (int*)malloc(N * sizeof(int));
 
-	int sum = 0;
-	int mean = 0;
-	int mode = 0;
-	int median = 0;
-	int range = 0;
-	int max = 0;
-	int min = 0;
-	int max_freq = 0;
+	//int sum = 0;
+	//int mean = 0;
+	//int mode = 0;
+	//int median = 0;
+	//int range = 0;
+	//int max = 0;
+	//int min = 0;
+	//int max_freq = 0;
 
-	for (int i = 0; i < N; i++)
-	{
-		scanf("%d", &num[i]);
-		sum += num[i];
+	//for (int i = 0; i < N; i++)
+	//{
+	//	scanf("%d", &num[i]);
+	//	sum += num[i];
 
-		if (max < num[i])
-			max = num[i];
+	//	if (max < num[i])
+	//		max = num[i];
 
-		if (min > num[i])
-			min = num[i];
-	}
+	//	if (min > num[i])
+	//		min = num[i];
+	//}
+	//
+	//qsort(num, N, sizeof(num[0]), compare); // 중앙값 계산 위해서 오름차순 정렬함
+
+	//for (int i = 0; i < N; i++)
+	//{
+	//	int count = 1;
+	//	for (int j = i + 1; j < N; j++)
+	//	{
+	//		if (num[i] == num[j])
+	//			count++;
+	//	}
+
+	//	if (count > max_freq)
+	//	{
+	//		max_freq = count;
+	//		mode = num[i];
+	//	}
+	//	else if (count == max_freq && num[i] < mode)
+	//	{
+	//		mode = num[i];
+	//	}
+	//}
+
+	//if (N == 1)
+	//{
+	//	mean = num[0];
+	//	median = num[0];
+	//	range = 0;
+	//}
+	//	
+	//else
+	//{
+	//	mean = sum / N;
+	//	median = num[(N + 1) / 2 - 1];
+	//	range = max - min;
+	//}
+
+	//printf("%d\n", mean);
+	//printf("%d\n", median);
+	//printf("%d\n", mode);
+	//printf("%d\n", range);
 	
-	qsort(num, N, sizeof(num[0]), compare); // 중앙값 계산 위해서 오름차순 정렬함
+	/*time_t ltime = time(NULL);
+	struct tm* t = gmtime(&ltime);
+	printf("%d\n", t->tm_year + 1900);
+	printf("%d\n", t->tm_mon+1);*/
+	//printf("%d\n", t->tm_mday);
+	
+	/*int a, b;
+	scanf("%d %d", &a, &b);
+	int count = 1;
+	int gcd = 0;
+	int lcm = 0;
+	int d1 = 1, d2 = 1;
 
-	for (int i = 0; i < N; i++)
+	for (int i = 1; i <= a; i++)
 	{
-		int count = 1;
-		for (int j = i + 1; j < N; j++)
+		for (int j = 1; j <= b; j++)
 		{
-			if (num[i] == num[j])
-				count++;
-		}
+			if (a % i == 0)
+				d1 = i;
 
-		if (count > max_freq)
-		{
-			max_freq = count;
-			mode = num[i];
-		}
-		else if (count == max_freq && num[i] < mode)
-		{
-			mode = num[i];
+			if (b % j == 0)
+				d2 = j;
+
+			if (d1 == d2 && gcd <= d1)
+				gcd = d1;
 		}
 	}
 
-	if (N == 1)
-	{
-		mean = num[0];
-		median = num[0];
-		range = 0;
-	}
-		
-	else
-	{
-		mean = sum / N;
-		median = num[(N + 1) / 2 - 1];
-		range = max - min;
-	}
+	lcm = gcd * (a / gcd) * (b / gcd);
 
-	printf("%d\n", mean);
-	printf("%d\n", median);
-	printf("%d\n", mode);
-	printf("%d\n", range);
+	for (int i = 1; i <= lcm; i++)
+	{
+		if (a % i == 0 && b % i == 0)
+		{
+			printf("%d %d %d\n", count, a / i, b / i);
+			count++;
+		}
+		else if (a % i != 0 || b % i != 0)
+		{
+			count++;
+			continue;
+		}
+	}*/
 
+	int L;
+	double S;
+
+	scanf("%d", &L);
+
+	S = L * L * sqrt(3) / 4;
+
+	printf("%.", S);
 }
 
 	

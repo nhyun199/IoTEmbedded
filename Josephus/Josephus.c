@@ -22,7 +22,7 @@ void pop(int** queue, int* back)
 		//printf("-1\n");
 	else
 	{
-		//printf("%d\n", (*queue)[0]);
+		//printf("%d", (*queue)[0]);
 		(*back)--;
 
 		if (*back == 0)
@@ -59,35 +59,32 @@ int main()
 	int back = 0;	
 
 	for (int i = 1; i <= N; i++)
-	{
 		push(&queue, &back, i);
-	}
+
+	/*printQueue(queue, back);
+
+	if (N == 1 && K == 1)
+	{
+		printf("<1>");
+		return 0;
+	}*/
 
 	printf("<");
-	while (back > K-1)
+	while (back > 0)
 	{
-		for (int i = 0; i < K; i++)
+		for (int i = 0; i < K-1; i++)
 		{
-			int temp = 0;
-			if (i != K - 1)
-			{
-				temp = queue[0];
-				pop(&queue, &back);
-				push(&queue, &back, temp);
-			}
-			else if (i == K - 1)
-			{
-				printf("%d, ", queue[0]);
-				pop(&queue, &back);
-			}
+			int temp = queue[0];
+			pop(&queue, &back);
+			push(&queue, &back, temp);
 		}
+		printf("%d", queue[0]);
+		pop(&queue, &back);
+
+		if (back > 0)
+			printf(", ");
 	}
-	for (int i = 0; i < back; i++)
-	{
-		if (i == back - 1)
-			printf("%d", queue[i]);
-		else
-			printf("%d, ",queue[i]);
-	}
+
 	printf(">");
+	
 }
