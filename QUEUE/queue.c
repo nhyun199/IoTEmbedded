@@ -72,6 +72,15 @@ void Back(int *queue, int back)
 		printf("%d\n", queue[back - 1]);
 }
 
+void printqueue(int* queue, int back)
+{
+	for (int i = 0; i < back; i++)
+	{
+		printf("%d ", queue[i]);
+	}
+	printf("\n");
+}
+
 int main()
 {
 	int N;

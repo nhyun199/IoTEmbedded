@@ -1634,14 +1634,61 @@ int main()
 		}
 	}*/
 
-	int L;
+	/*int L;
 	double S;
 
 	scanf("%d", &L);
 
 	S = L * L * sqrt(3) / 4;
 
-	printf("%.", S);
+	printf("%.", S);*/
+
+	int N;
+	int Y = 0;
+	int M = 0; // 30초마다 10원 Y 60초마다 15원 M
+	scanf("%d", &N);
+	int* call = (int*)malloc(N * sizeof(int));
+
+	for (int i = 0; i < N; i++)
+	{
+		scanf("%d", &call[i]);
+	}
+
+	for (int i = 0; i < N; i++)
+	{
+		if (call[i] < 30) 
+		{
+			Y += 10;
+		}
+		else if (call[i] >= 30)
+		{
+			Y += (call[i] / 30) * 10 + 10;
+		}
+
+		if (call[i] < 60) 
+		{
+			M += 15;
+		}
+		else if (call[i] >= 60)
+		{
+			M += (call[i] / 60) * 15 + 15;
+		}
+	}
+
+	if (Y > M)
+	{
+		printf("M %d", M);
+	}
+	else if (Y < M)
+	{
+		printf("Y %d", Y);
+	}
+	else if (Y == M)
+	{
+		printf("Y M %d", Y);
+	}
+
+	free(call);
 }
 
 	
