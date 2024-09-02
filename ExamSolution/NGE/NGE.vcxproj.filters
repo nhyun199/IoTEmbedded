@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="reverse2.c">
+    <ClCompile Include="NGE.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

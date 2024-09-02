@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{e35e0d05-fa1f-4bf8-b151-051f71dcab90}</ProjectGuid>
-    <RootNamespace>reverse2</RootNamespace>
+    <ProjectGuid>{55212b52-7a18-4be9-97ce-40345a7d6c6b}</ProjectGuid>
+    <RootNamespace>NGE</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="reverse2.c" />
+    <ClCompile Include="NGE.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
