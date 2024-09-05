@@ -69,6 +69,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "doubles", "..\ExamSolution\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "throwBall", "..\ExamSolution\throwBall\throwBall.vcxproj", "{01666A48-34DE-433F-BB49-A3EE398AF16A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "triangleNum", "..\ExamSolution\triangleNum\triangleNum.vcxproj", "{97D96094-7D88-486A-B7B2-81ECBA4D9312}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -325,6 +327,14 @@ Global
 		{01666A48-34DE-433F-BB49-A3EE398AF16A}.Release|x64.Build.0 = Release|x64
 		{01666A48-34DE-433F-BB49-A3EE398AF16A}.Release|x86.ActiveCfg = Release|Win32
 		{01666A48-34DE-433F-BB49-A3EE398AF16A}.Release|x86.Build.0 = Release|Win32
+		{97D96094-7D88-486A-B7B2-81ECBA4D9312}.Debug|x64.ActiveCfg = Debug|x64
+		{97D96094-7D88-486A-B7B2-81ECBA4D9312}.Debug|x64.Build.0 = Debug|x64
+		{97D96094-7D88-486A-B7B2-81ECBA4D9312}.Debug|x86.ActiveCfg = Debug|Win32
+		{97D96094-7D88-486A-B7B2-81ECBA4D9312}.Debug|x86.Build.0 = Debug|Win32
+		{97D96094-7D88-486A-B7B2-81ECBA4D9312}.Release|x64.ActiveCfg = Release|x64
+		{97D96094-7D88-486A-B7B2-81ECBA4D9312}.Release|x64.Build.0 = Release|x64
+		{97D96094-7D88-486A-B7B2-81ECBA4D9312}.Release|x86.ActiveCfg = Release|Win32
+		{97D96094-7D88-486A-B7B2-81ECBA4D9312}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -361,6 +371,7 @@ Global
 		{09E3D89D-DEC4-4215-BD9C-CD5CA0ED8E78} = {DA3926C5-F8D6-4C2C-8120-5AC004D9B15D}
 		{DB65136D-A54B-4701-B26D-CA0D2A30627A} = {DA3926C5-F8D6-4C2C-8120-5AC004D9B15D}
 		{01666A48-34DE-433F-BB49-A3EE398AF16A} = {DA3926C5-F8D6-4C2C-8120-5AC004D9B15D}
+		{97D96094-7D88-486A-B7B2-81ECBA4D9312} = {DA3926C5-F8D6-4C2C-8120-5AC004D9B15D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D402EC2-8E1F-4A18-9EB9-9CFBEAE9A862}
