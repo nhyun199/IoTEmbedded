@@ -71,6 +71,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "throwBall", "..\ExamSolutio
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "triangleNum", "..\ExamSolution\triangleNum\triangleNum.vcxproj", "{97D96094-7D88-486A-B7B2-81ECBA4D9312}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bigIntegerArithmetic", "..\Algorithm\bigIntegerArithmetic\bigIntegerArithmetic.vcxproj", "{A2478198-9B13-49F8-A614-1848C730D3DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -335,6 +337,14 @@ Global
 		{97D96094-7D88-486A-B7B2-81ECBA4D9312}.Release|x64.Build.0 = Release|x64
 		{97D96094-7D88-486A-B7B2-81ECBA4D9312}.Release|x86.ActiveCfg = Release|Win32
 		{97D96094-7D88-486A-B7B2-81ECBA4D9312}.Release|x86.Build.0 = Release|Win32
+		{A2478198-9B13-49F8-A614-1848C730D3DC}.Debug|x64.ActiveCfg = Debug|x64
+		{A2478198-9B13-49F8-A614-1848C730D3DC}.Debug|x64.Build.0 = Debug|x64
+		{A2478198-9B13-49F8-A614-1848C730D3DC}.Debug|x86.ActiveCfg = Debug|Win32
+		{A2478198-9B13-49F8-A614-1848C730D3DC}.Debug|x86.Build.0 = Debug|Win32
+		{A2478198-9B13-49F8-A614-1848C730D3DC}.Release|x64.ActiveCfg = Release|x64
+		{A2478198-9B13-49F8-A614-1848C730D3DC}.Release|x64.Build.0 = Release|x64
+		{A2478198-9B13-49F8-A614-1848C730D3DC}.Release|x86.ActiveCfg = Release|Win32
+		{A2478198-9B13-49F8-A614-1848C730D3DC}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -372,6 +382,7 @@ Global
 		{DB65136D-A54B-4701-B26D-CA0D2A30627A} = {DA3926C5-F8D6-4C2C-8120-5AC004D9B15D}
 		{01666A48-34DE-433F-BB49-A3EE398AF16A} = {DA3926C5-F8D6-4C2C-8120-5AC004D9B15D}
 		{97D96094-7D88-486A-B7B2-81ECBA4D9312} = {DA3926C5-F8D6-4C2C-8120-5AC004D9B15D}
+		{A2478198-9B13-49F8-A614-1848C730D3DC} = {CC26C782-E060-4DD2-A02B-42E329AD60AD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D402EC2-8E1F-4A18-9EB9-9CFBEAE9A862}
