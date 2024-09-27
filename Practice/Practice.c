@@ -5,7 +5,7 @@
 #include <ctype.h>
 #include <math.h>
 #include <time.h>
-
+#include <limits.h>
 
 int AtSign(int A, int B)
 {
@@ -190,6 +190,24 @@ void rotateFirstToLast(int* A, int length)
 		A[i - 1] = A[i];
 
 	A[length - 1] = temp;
+}
+
+int calculate(int a, char op, int b)
+{
+	if (op == '+')
+		return a + b;
+	if (op == '-')
+		return a - b;
+	if (op == '*')
+		return a * b;
+	if (op == '/') {
+		int result = abs(a) / abs(b);
+		if ((a < 0 && b > 0) || (a > 0 && b < 0)) {
+			result = -result;
+		}
+		return result;
+	}
+	return 0;
 }
 
 typedef struct
@@ -1643,53 +1661,503 @@ int main()
 
 	printf("%.", S);*/
 
-	int N;
-	int Y = 0;
-	int M = 0; // 30초마다 10원 Y 60초마다 15원 M
-	scanf("%d", &N);
-	int* call = (int*)malloc(N * sizeof(int));
+	//int N;
+	//int Y = 0;
+	//int M = 0; // 30초마다 10원 Y 60초마다 15원 M
+	//scanf("%d", &N);
+	//int* call = (int*)malloc(N * sizeof(int));
 
-	for (int i = 0; i < N; i++)
-	{
-		scanf("%d", &call[i]);
-	}
+	//for (int i = 0; i < N; i++)
+	//{
+	//	scanf("%d", &call[i]);
+	//}
 
-	for (int i = 0; i < N; i++)
+	//for (int i = 0; i < N; i++)
+	//{
+	//	if (call[i] < 30) 
+	//	{
+	//		Y += 10;
+	//	}
+	//	else if (call[i] >= 30)
+	//	{
+	//		Y += (call[i] / 30) * 10 + 10;
+	//	}
+
+	//	if (call[i] < 60) 
+	//	{
+	//		M += 15;
+	//	}
+	//	else if (call[i] >= 60)
+	//	{
+	//		M += (call[i] / 60) * 15 + 15;
+	//	}
+	//}
+
+	//if (Y > M)
+	//{
+	//	printf("M %d", M);
+	//}
+	//else if (Y < M)
+	//{
+	//	printf("Y %d", Y);
+	//}
+	//else if (Y == M)
+	//{
+	//	printf("Y M %d", Y);
+	//}
+
+	//free(call);
+
+	//int N;
+	//scanf("%d", &N);
+	//for (int i = 0; i < N; i++)
+	//{
+	//	if (i % 2 == 0)
+	//	{
+	//		for (int j = 0; j < N; j++)
+	//			printf("*");
+	//		printf("\n");
+	//	}
+	//	else
+	//	{
+	//		printf(" ");
+	//			for (int k = 0; k < N; k++)
+	//				printf("*");
+	//		printf("\n");
+	//	}
+	//}
+
+	//int k1, k2, k3;
+	//char o1, o2;
+
+	//// 입력 받기
+	//scanf("%d %c %d %c %d", &k1, &o1, &k2, &o2, &k3);
+
+	//// 모든 연산자가 동일한 우선순위로 계산
+	//int result1 = calculate(calculate(k1, o1, k2), o2, k3);
+
+	//// 연산자 우선순위를 고려한 계산
+	//int result2 = calculate(k1, o1, calculate(k2, o2, k3));
+	//
+
+	//// 작은 값부터 출력, 한 줄씩 결과를 출력해야 함
+	//if (result1 <= result2) {
+	//	printf("%d\n%d\n", result1, result2);
+	//}
+	//else {
+	//	printf("%d\n%d\n", result2, result1);
+	//}
+
+	//char shuffle[51];
+	//scanf("%s", shuffle);
+	//int len = strlen(shuffle);
+
+	//int cup1 = 1;
+	//int cup2 = 0;
+	//int cup3 = 0;
+
+	//for (int i = 0; i < len; i++)
+	//{
+	//	if (shuffle[i] == 'A')
+	//	{
+	//		if (cup1 == 1)
+	//		{
+	//			cup1 = 0;
+	//			cup2 = 1;
+	//		}
+	//		else if (cup2 == 1)
+	//		{
+	//			cup2 = 0;
+	//			cup1 = 1;
+	//		}
+	//	}
+	//	else if (shuffle[i] == 'B')
+	//	{
+	//		if (cup2 == 1)
+	//		{
+	//			cup2 = 0;
+	//			cup3 = 1;
+	//		}
+	//		else if (cup3 == 1)
+	//		{
+	//			cup3 = 0;
+	//			cup2 = 1;
+	//		}
+	//	}
+	//	else if(shuffle[i] == 'C')
+	//	{
+	//		if (cup3 == 1)
+	//		{
+	//			cup3 = 0;
+	//			cup1 = 1;
+	//		}
+	//		else if (cup1 == 1)
+	//		{
+	//			cup1 = 0;
+	//			cup3 = 1;
+	//		}
+	//	}
+	//}
+
+	//if (cup1 == 1)
+	//	printf("1");
+	//else if (cup2 == 1)
+	//	printf("2");
+	//else if (cup3 == 1)
+	//	printf("3");
+
+	//int n;
+	//scanf("%d", &n);
+	//float d, f, p;
+	//float result;
+
+	//for (int i = 0; i < n; i++)
+	//{
+	//	scanf("%f %f %f", &d, &f, &p);
+	//	result = d * f * p;
+	//	printf("$%.2f\n", result);
+	//}
+
+	//int n;
+	//scanf("%d", &n);
+
+	//for (int i = 0; i < n; i++)
+	//{
+	//	char name[51];
+	//	scanf("%s", name);
+	//	int len = strlen(name);
+
+	//	printf("String #%d\n", i + 1);
+	//	for (int j = 0; j < len; j++)
+	//	{
+	//		name[j] += 1;
+	//		if (name[j] == 91)
+	//			name[j] = 65;
+	//		printf("%c", name[j]);
+	//	}
+	//	printf("\n\n");
+	//}
+
+	//int A, B, C;
+	//int N;
+	//int a, b, c;
+	//int top = 0;
+	//scanf("%d %d %d", &A, &B, &C);
+	//scanf("%d", &N);
+
+	//for (int i = 0; i < N; i++)
+	//{
+	//	int score = 0;
+	//	for (int j = 0; j < 3; j++)
+	//	{
+	//		scanf("%d %d %d", &a, &b, &c);
+	//		score += (A * a) + (B * b) + (C * c);
+	//	}
+
+	//	if (score > top)
+	//		top = score;
+	//}
+	//printf("%d", top);
+
+	//int N, k;
+	//scanf("%d %d", &N, &k);
+	//int* score = (int*)malloc(N * sizeof(int));
+
+	//for (int i = 0; i < N; i++)
+	//{
+	//	scanf("%d", &score[i]);
+	//}
+
+	//for (int i = 0; i < N; i++)
+	//{
+	//	int cut = 0;
+	//	for (int j = 0; j < N; j++) // 자기자신과 비교 안함
+	//	{
+	//		if (j == i)
+	//			continue;
+
+	//		if (score[i] >= score[j])
+	//		{
+	//			cut++;
+	//		}
+	//	}
+	//	if (cut == N - k)
+	//	{
+	//		printf("%d", score[i]);
+	//		return 0;
+	//	}
+	//}
+	//free(score);
+
+	//int N;
+	//scanf("%d", &N);
+	//int* trophy = (int*)malloc(N*sizeof(int));
+	//int highLeft = 1;
+	//int maxLeft = trophy[0];
+
+	//for (int i = 0; i < N; i++)
+	//	scanf("%d", &trophy[i]);
+
+	//for (int i = 1; i < N; i++)
+	//{
+	//	if (trophy[i] > maxLeft)
+	//	{
+	//		highLeft++;
+	//		maxLeft = trophy[i];
+	//	}
+	//}
+	//
+	//int highRight = 1;
+	//int maxRight = trophy[N - 1];
+
+	//for (int i = N - 2; i > 0; i--)
+	//{
+	//	if (trophy[i] > maxRight)
+	//	{
+	//		highRight++;
+	//		maxRight = trophy[i];
+	//	}
+	//}
+
+	//printf("%d\n%d", highLeft, highRight);
+	//free(trophy);
+
+	//int N;
+	//int firstName[26] = { 0 };
+	//int out = 0;
+
+	//scanf("%d", &N);
+
+	//for (int i = 0; i < N; i++)
+	//{
+	//	char name[31];
+	//	scanf("%s", name);
+	//	firstName[name[0] - 'a']++;
+	//}
+
+	//for (int i = 0; i < 26; i++)
+	//{
+	//	if (firstName[i] >= 5)
+	//	{
+	//		printf("%c", i + 'a');
+	//		out = 1;
+	//	}
+	//}
+
+	//if (out == 0)
+	//	printf("PREDAJA");
+	
+	//int N, m, M, T, R;
+	//int runningTime = 0;
+	//int total = 0;
+	//scanf("%d %d %d %d %d", &N, &m, &M, &T, &R);
+	//int prePulse = m;
+
+	//if (m + T > M)
+	//{
+	//	printf("-1");
+	//	return 0;
+	//}
+
+	//while (runningTime < N)
+	//{
+	//	if (prePulse + T <= M)
+	//	{
+	//		prePulse += T;
+	//		runningTime++;
+	//		total++;
+	//	}
+	//	else
+	//	{
+	//		prePulse -= R;
+	//		if (prePulse < m)
+	//			prePulse = m;
+	//		total++;
+	//	}
+
+	//	if (prePulse == m && prePulse + T > M)
+	//	{
+	//		printf("-1");
+	//		return 0;
+	//	}
+	//}
+	//printf("%d", total);
+	
+	//int n;
+	//int o = 1, w =1;
+	//char command;
+	//int status = 0;
+	//int index = 1;
+
+	//while (o != 0 && w != 0)
+	//{
+	//	if (status == 0)
+	//		scanf("%d %d", &o, &w);
+	//	
+	//	if (o == 0 && w == 0)
+	//		break;
+
+	//	scanf(" %c %d", &command, &n);
+
+	//	if (status != 3)
+	//	{
+	//		if (command == 'E')
+	//		{
+	//			w -= n;
+	//		}
+	//		else if(command == 'F')
+	//		{
+	//			w += n;
+	//		}
+	//		
+	//		if (w > 0.5 * o && w < 2 * o) // :-)
+	//			status = 1;
+	//		else if (w <= 0) // RIP
+	//			status = 3;
+	//		else // :-(
+	//			status = 2;
+	//	}
+	//	
+	//	if (command == '#')
+	//	{
+	//		if (status == 1)
+	//			printf("%d :-)\n", index);
+	//		else if (status == 2)
+	//			printf("%d :-(\n", index);
+	//		else if (status == 3)
+	//			printf("%d RIP\n", index);
+
+	//		status = 0;
+	//		index++;
+	//	}
+	//}
+	
+	//int N;
+	//int seat[100] = { 0 };
+	//int customer;
+	//int rejected = 0;
+
+	//scanf("%d", &N);
+
+	//for (int i = 0; i < N; i++)
+	//{
+	//	scanf("%d", &customer);
+
+	//	if (seat[customer - 1] == 0)
+	//		seat[customer - 1]++;
+	//	else
+	//		rejected++;
+	//}
+	//printf("%d", rejected);
+
+	//int decimal = 0;
+	//int num;
+	//int index = 0;
+	//char hexa[7];
+	//scanf("%s", hexa);
+	//
+	//int len = strlen(hexa);
+
+	//for (int i = len - 1; i >= 0; i--)
+	//{
+	//	if (hexa[i] <= 57)
+	//		num = hexa[i] - '0'; // '0' = 48
+	//	else
+	//		num = hexa[i] - '7'; // '7' = 55
+
+	//	decimal += num * pow(16, index);
+	//	index++;
+	//}
+	//printf("%d", decimal);
+
+	//int N;
+	//scanf("%d", &N);
+
+	//int time = 0;
+	//int fly = 1;
+
+	//while (N != 0)
+	//{
+	//	if (N < fly)
+	//		fly = 1;
+
+	//	N -= fly++;
+	//	time++;
+	//}
+
+	//printf("%d", time);
+
+	//int n, k;
+
+	//while (scanf("%d %d", &n, &k) != EOF) 
+	//{
+	//	int coupon = n;
+	//	int chicken = coupon;
+
+	//	while (1)
+	//	{
+	//		int used = coupon / k;
+
+	//		if (coupon < k)
+	//			break;
+
+	//		chicken += used;
+	//		coupon = coupon - k * used + used;
+	//	}
+
+	//	printf("%d\n", chicken);
+	//}
+
+	//int N, L;
+	/*scanf("%d %d", &N, &L);
+	int index = 0;
+	int label = 1;
+	char chL = L + '0';
+	
+	while (index < N)
 	{
-		if (call[i] < 30) 
+		char chLabel[12];
+		sprintf(chLabel, "%d", label);
+		
+		if (strchr(chLabel, chL) == NULL)
 		{
-			Y += 10;
+			index++;
 		}
-		else if (call[i] >= 30)
+		
+		if (index == N)
+			break;
+
+		label++;
+	}
+	printf("%d", label);*/
+
+	int A, B, C;
+	scanf("%d %d %d", &A, &B, &C);
+	int x = 1;
+	int sales;
+	int previousSales = C * x - (A + B * x);
+	
+	while (1)
+	{
+		sales = C * x - (A + B * x);
+
+		if (sales - previousSales < 0)
 		{
-			Y += (call[i] / 30) * 10 + 10;
+			printf("-1");
+			return 0;
 		}
 
-		if (call[i] < 60) 
+		if (sales > 0)
 		{
-			M += 15;
+			printf("%d", x);
+			return 0;
 		}
-		else if (call[i] >= 60)
-		{
-			M += (call[i] / 60) * 15 + 15;
-		}
-	}
 
-	if (Y > M)
-	{
-		printf("M %d", M);
+		previousSales = sales;
+		x++;
 	}
-	else if (Y < M)
-	{
-		printf("Y %d", Y);
-	}
-	else if (Y == M)
-	{
-		printf("Y M %d", Y);
-	}
-
-	free(call);
 }
+
 
 	
 
