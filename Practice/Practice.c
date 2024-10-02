@@ -210,6 +210,21 @@ int calculate(int a, char op, int b)
 	return 0;
 }
 
+int fibonachi(int n)
+{
+	int fibo;
+
+	if (n == 0)
+		return 0;
+	else if (n == 1 || n == 2)
+		return 1;
+	else
+	{
+		fibo = fibonachi(n - 1) + fibonachi(n - 2);
+		return fibo;
+	}
+}
+
 typedef struct
 {
 	int age;
@@ -2131,30 +2146,186 @@ int main()
 	}
 	printf("%d", label);*/
 
-	int A, B, C;
-	scanf("%d %d %d", &A, &B, &C);
-	int x = 1;
-	int sales;
-	int previousSales = C * x - (A + B * x);
+	//int A, B, C;
+	//scanf("%d %d %d", &A, &B, &C);
+	//int x = 1;
+	//int sales;
+	//int previousSales = C * x - (A + B * x);
+	//
+	//while (1)
+	//{
+	//	sales = C * x - (A + B * x);
+
+	//	if (sales - previousSales < 0)
+	//	{
+	//		printf("-1");
+	//		return 0;
+	//	}
+
+	//	if (sales > 0)
+	//	{
+	//		printf("%d", x);
+	//		return 0;
+	//	}
+
+	//	previousSales = sales;
+	//	x++;
+	//}
+
+	//int M, N;
+	//int sum = 0;
+	//int min = -1;
+	//int X = 0;
+	//scanf("%d %d", &M, &N);
+	//
+	//for (int i = M; i <= N; i++)
+	//{
+	//	double intPart, fracPart;
+	//	fracPart = modf(sqrt(i), &intPart);
+
+	//	if (fracPart == 0.0)
+	//	{
+	//		sum += i;
+	//		if (min == - 1 || min > i)
+	//			min = i;
+	//		X++;
+	//	}
+	//}
+	//if (X == 0)
+	//	printf("-1");
+	//else
+	//	printf("%d\n%d", sum, min);
+
+	//int N;
+	//scanf("%d", &N);
+	//int* S = malloc(N * sizeof(int));
+	//int d, r;
+	//int lastTerm;
+
+	//for (int i = 0; i < N; i++)
+	//	scanf("%d", &S[i]);
+	//
+	//if (S[1] - S[0] == S[2] - S[1])
+	//{
+	//	d = S[1] - S[0];
+	//	lastTerm = S[N - 1] + d;
+	//}
+	//else
+	//{
+	//	r = S[1] / S[0];
+	//	lastTerm = S[N - 1] * r;
+	//}
+	//printf("%d", lastTerm);
+	//free(S);
 	
-	while (1)
+	//while (1)
+	//{
+	//	char octo[9];
+	//	scanf("%s", octo);
+
+	//	if (octo[0] == '#')
+	//		break;
+
+	//	int len = strlen(octo);
+	//	int num = 0;
+	//	int sum = 0;
+	//	int index = 0;
+
+	//	for (int i = len - 1; i >= 0; i--)
+	//	{
+	//		if (octo[i] == '-')
+	//			num = 0;
+	//		else if (octo[i] == '\\')
+	//			num = 1;
+	//		else if (octo[i] == '(')
+	//			num = 2;
+	//		else if (octo[i] == '@')
+	//			num = 3;
+	//		else if (octo[i] == '?')
+	//			num = 4;
+	//		else if (octo[i] == '>')
+	//			num = 5;
+	//		else if (octo[i] == '&')
+	//			num = 6;
+	//		else if (octo[i] == '%')
+	//			num = 7;
+	//		else if (octo[i] == '/')
+	//			num = -1;
+
+	//		sum += num * pow(8, index);
+	//		index++;
+	//	}
+	//	printf("%d\n", sum);
+	//}
+	
+	//int N;
+	//scanf("%d", &N);
+
+	//for (int i = 0; i < N; i++)
+	//{
+	//	char numberPlate[9];
+	//	char* token;
+	//	int LLL = 0;
+	//	int DDDD = 0;
+	//	scanf("%s", numberPlate);
+	//	LLL = (numberPlate[0] - 'A') * pow(26, 2) +
+	//		  (numberPlate[1] - 'A') * pow(26, 1) +
+	//		  (numberPlate[2] - 'A');
+	//	token = strtok(numberPlate, "-");
+	//	token = strtok(NULL, "-");
+	//	DDDD = strtol(token, NULL, 10);
+
+	//	if (abs(LLL - DDDD) <= 100)
+	//		printf("nice\n");
+	//	else
+	//		printf("not nice\n");
+	//}
+
+	/*int A, B;
+	scanf("%d %d", &A, &B);
+	int sum = B * (B + 1) / 2 - (A - 1) * A / 2;
+	printf("%d", sum);*/
+	
+	//int n;
+	//int p, t;
+	//scanf("%d", &n);
+
+	//for (int i = 0; i < n; i++)
+	//{
+	//	scanf("%d %d", &p, &t);
+	//	p -= t / 7;
+	//	p += t / 4;
+	//	printf("%d\n", p);
+	//}
+
+	int x, y;
+
+	/*int n;
+	scanf("%d", &n);
+	int fibo = fibonachi(n);
+	printf("%d", fibo);*/
+
+	int N;
+	scanf("%d", &N);
+	
+	for (int i = 0; i < N; i++)
 	{
-		sales = C * x - (A + B * x);
+		int origin = 0;
+		int strfry = 0;
+		char before[1001];
+		char after[1001];
+		scanf("%s %s", before, after);
+		int len = strlen(before);
 
-		if (sales - previousSales < 0)
+		for (int j = 0; j < len; j++)
 		{
-			printf("-1");
-			return 0;
+			origin += before[j];
+			strfry += after[j];
 		}
-
-		if (sales > 0)
-		{
-			printf("%d", x);
-			return 0;
-		}
-
-		previousSales = sales;
-		x++;
+		if (origin == strfry)
+			printf("Possible\n");
+		else
+			printf("Impossible\n");
 	}
 }
 
