@@ -85,6 +85,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "train", "..\ExamSolution\tr
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "diceGame", "..\ExamSolution\diceGame\diceGame.vcxproj", "{AC7E060F-0937-4FAF-BBEC-4ACCF1FD6FF6}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "practiceOfC++", "..\ExamSolution\practiceOfC++\practiceOfC++.vcxproj", "{E015D640-F883-4C5F-BF0A-AF936E08ED91}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -405,6 +407,14 @@ Global
 		{AC7E060F-0937-4FAF-BBEC-4ACCF1FD6FF6}.Release|x64.Build.0 = Release|x64
 		{AC7E060F-0937-4FAF-BBEC-4ACCF1FD6FF6}.Release|x86.ActiveCfg = Release|Win32
 		{AC7E060F-0937-4FAF-BBEC-4ACCF1FD6FF6}.Release|x86.Build.0 = Release|Win32
+		{E015D640-F883-4C5F-BF0A-AF936E08ED91}.Debug|x64.ActiveCfg = Debug|x64
+		{E015D640-F883-4C5F-BF0A-AF936E08ED91}.Debug|x64.Build.0 = Debug|x64
+		{E015D640-F883-4C5F-BF0A-AF936E08ED91}.Debug|x86.ActiveCfg = Debug|Win32
+		{E015D640-F883-4C5F-BF0A-AF936E08ED91}.Debug|x86.Build.0 = Debug|Win32
+		{E015D640-F883-4C5F-BF0A-AF936E08ED91}.Release|x64.ActiveCfg = Release|x64
+		{E015D640-F883-4C5F-BF0A-AF936E08ED91}.Release|x64.Build.0 = Release|x64
+		{E015D640-F883-4C5F-BF0A-AF936E08ED91}.Release|x86.ActiveCfg = Release|Win32
+		{E015D640-F883-4C5F-BF0A-AF936E08ED91}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -449,6 +459,7 @@ Global
 		{A059324A-E219-4D09-8087-24DA79757ABC} = {DA3926C5-F8D6-4C2C-8120-5AC004D9B15D}
 		{5E669E98-8359-479E-952A-F66170F55447} = {DA3926C5-F8D6-4C2C-8120-5AC004D9B15D}
 		{AC7E060F-0937-4FAF-BBEC-4ACCF1FD6FF6} = {DA3926C5-F8D6-4C2C-8120-5AC004D9B15D}
+		{E015D640-F883-4C5F-BF0A-AF936E08ED91} = {DA3926C5-F8D6-4C2C-8120-5AC004D9B15D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D402EC2-8E1F-4A18-9EB9-9CFBEAE9A862}

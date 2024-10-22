@@ -1,11 +1,13 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
+#include <ctype.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
-#include <math.h>
 #include <time.h>
-#include <limits.h>
+#define MAX 1000000;
 
 int AtSign(int A, int B)
 {
@@ -92,7 +94,7 @@ int MenOfPassion(int A[], int n)
 int digitsum(int n)
 {
 	//int N[6] = { 0 };
-	int sum = n;
+	int sum = 0;
 	/*N[0] = n / 100000;
 	N[1] = (n % 100000) / 10000;
 	N[2] = (n % 10000) / 1000;
@@ -133,38 +135,9 @@ void sort(int len, int max, int min, int A[], int B[], int C[])
 	}
 }
 
-int compare(const void* a, const void* b)
+int compare(const void *a, const void *b)
 {
-	if (*(int*)a > *(int*)b)
-		return 1;
-	else if (*(int*)a < *(int*)b)
-		return -1;
-	else
-		return 0;
-}
-
-int compare2(const void* a, const void* b)
-{
-	int* coordA = (int*)a;
-	int* coordB = (int*)b;
-
-	if (coordA[0] != coordB[0])
-	{
-		return coordA[0] - coordB[0];
-	}
-	return coordA[1] - coordB[1];
-
-}
-
-int compare3(const void* a, const void* b)
-{
-	char* A = (char*)a;
-	char* B = (char*)b;
-
-	if (strlen(A) != strlen(B))
-		return strlen(A) - strlen(B);
-
-	return strcmp(A, B);
+	return (*(int*)a - *(int*)b);
 }
 
 void del(int** A, int* length)
@@ -224,6 +197,18 @@ int fibonachi(int n)
 		return fibo;
 	}
 }
+
+int sumOfDigit(int num)
+{
+	int sum = 0;
+	while (num > 0)
+	{
+		sum += num % 10;
+		num /= 10;
+	}
+	return sum;
+}
+
 
 typedef struct
 {
@@ -2298,35 +2283,485 @@ int main()
 	//	printf("%d\n", p);
 	//}
 
-	int x, y;
+	//int x, y;
 
 	/*int n;
 	scanf("%d", &n);
 	int fibo = fibonachi(n);
 	printf("%d", fibo);*/
 
-	int N;
-	scanf("%d", &N);
+	//int N;
+	//scanf("%d", &N);
+	//
+	//for (int i = 0; i < N; i++)
+	//{
+	//	int origin = 0;
+	//	int strfry = 0;
+	//	char before[1001];
+	//	char after[1001];
+	//	scanf("%s %s", before, after);
+	//	int len = strlen(before);
+
+	//	for (int j = 0; j < len; j++)
+	//	{
+	//		origin += before[j];
+	//		strfry += after[j];
+	//	}
+	//	if (origin == strfry)
+	//		printf("Possible\n");
+	//	else
+	//		printf("Impossible\n");
+	//}
+
+	//int L, D, X;
+	//scanf("%d %d %d", &L, &D, &X);
+	//int N = D;
+	//int M = L;
+
+	//for (int i = L; i <= D; i++)
+	//{
+	//	if (sumOfDigit(i) == X)
+	//	{
+	//		if (i <= N)
+	//			N = i;
+
+	//		if (i >= M)
+	//			M = i;
+	//	}
+	//}
+	//printf("%d\n%d", N, M);
 	
-	for (int i = 0; i < N; i++)
+	/*int N;
+	scanf("%d", &N);
+	long long sum = N;
+	char roll[10];
+	sprintf(roll, "%d", N);
+	int len = strlen(roll);
+
+	for (int i = 0; i < len-1; i++)
 	{
-		int origin = 0;
-		int strfry = 0;
-		char before[1001];
-		char after[1001];
-		scanf("%s %s", before, after);
-		int len = strlen(before);
+		char temp = roll[len - 1];
+		for (int j = len-1; j > 0; j--)
+		{
+			roll[j] = roll[j - 1];
+		}
+		roll[0] = temp;
+		int rollNum = atoi(roll);
+		sum += rollNum;
+	}
+	printf("%lld", sum);*/
+
+	/*int N;
+	scanf("%d", &N);
+	int* road = malloc(N * sizeof(int));
+	int hill = 0;
+	int maxhill = 0;
+	for (int i = 0; i < N; i++)
+		scanf("%d", &road[i]);
+	int start = road[0];
+	int last = 0;
+	int i = 1;
+	while (i < N)
+	{
+		if (road[i - 1] < road[i])
+		{
+			last = road[i];
+			i++;
+		}
+
+		if (road[i - 1] >= road[i])
+		{
+			hill = last - start;
+			if (hill > maxhill)
+				maxhill = hill;
+			start = road[i];
+			i++;
+		}
+	}
+	printf("%d", maxhill);*/
+
+	//int N;
+	//scanf("%d", &N);
+
+	//for (int i = 0; i < N; i++)
+	//{
+	//	char origin[1001];
+	//	char strfry[1001];
+	//	scanf("%s %s", origin, strfry);
+	//	int len = strlen(origin);
+	//	int sum1 = 0;
+	//	int sum2 = 0;
+
+	//	for (int j = 0; j < len; j++)
+	//	{
+	//		sum1 += origin[j] - '0';
+	//		sum2 += strfry[j] - '0';
+	//	}
+
+	//	if (sum1 == sum2)
+	//		printf("Possible\n");
+	//	else
+	//		printf("Impossible\n");
+	//}
+
+	/*int T;
+	scanf("%d", &T);
+
+	for (int i = 0; i < T; i++)
+	{
+		int X;
+		char num[11];
+		int number[10] = { 0 };
+		int differ = 0;
+		scanf("%d", &X);
+		sprintf(num, "%d", X);
+		int len = strlen(num);
 
 		for (int j = 0; j < len; j++)
 		{
-			origin += before[j];
-			strfry += after[j];
+			number[num[j] - '0']++;
 		}
-		if (origin == strfry)
-			printf("Possible\n");
-		else
-			printf("Impossible\n");
+
+		for (int k = 0; k < 10; k++)
+		{
+			if (number[k] > 0)
+				differ++;
+		}
+
+		printf("%d\n", differ);
+	}*/
+
+	/*int n;
+	long long distance = 0;
+	scanf("%d", &n);
+	int* coord = malloc(n * sizeof(int));
+
+	for (int i = 0; i < n; i++)
+		scanf("%d", &coord[i]);
+
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			if (i != j)
+			{
+				distance += abs(coord[i] - coord[j]);
+			}
+		}
 	}
+	printf("%d", distance);
+	free(coord);*/
+	
+	/*int A, B;
+	scanf("%d %d", &A, &B);
+	int hamburger = 0;
+
+	while (1)
+	{
+		if (A < 2 || B < 1)
+			break;
+
+		A -= 2;
+		B--;
+		hamburger++;
+	}
+	printf("%d", hamburger);*/
+	
+	//long long a;
+	//double pi = 3.141592;
+	//scanf("%lld", &a);
+
+	//double A = pi * 2 * sqrt(a / pi);
+	//printf("%lf", A);
+
+	//int n;
+	//scanf("%d", &n);
+	//int maxS = 0;
+	//
+	//for (int i = 0; i < n; i++)
+	//{
+	//	int h, w;
+	//	scanf("%d %d", &h, &w);
+	//	int S = h * w;
+
+	//	if (S > maxS)
+	//		maxS = S;
+	//}
+	//printf("%d", maxS);
+	
+	//int n;
+	//scanf("%d", &n);
+
+
+	//for (int j = 0; j < n; j++)
+	//{
+	//	for (int k = 0; k < n; k++)
+	//	{
+	//		printf("@@@@@");
+	//	}
+	//	printf("\n");
+	//}
+	//
+	//for (int i = 0; i < n; i++)
+	//{
+	//	for (int j = 0; j < n; j++)
+	//	{
+	//		printf("@");
+	//	}
+	//	printf("\n");
+	//}
+
+	//for (int j = 0; j < n; j++)
+	//{
+	//	for (int k = 0; k < n; k++)
+	//	{
+	//		printf("@@@@@");
+	//	}
+	//	printf("\n");
+	//}
+
+	//for (int i = 0; i < n; i++)
+	//{
+	//	for (int j = 0; j < n; j++)
+	//	{
+	//		printf("@");
+	//	}
+	//	printf("\n");
+	//}
+
+	//for (int j = 0; j < n; j++)
+	//{
+	//	for (int k = 0; k < n; k++)
+	//	{
+	//		printf("@@@@@");
+	//	}
+	//	printf("\n");
+	//}
+
+	//int M, N;
+	//int sum = 0;
+	//int min = 0;
+	//scanf("%d %d", &M, &N);
+
+	//for (int i = M; i <= N; i++)
+	//{
+	//	if (i < 2)
+	//		continue;
+
+	//	bool isPrime = true;
+
+	//	for (int j = 2; j <= i - 1; j++)
+	//	{
+	//		if (i % j == 0)
+	//		{
+	//			isPrime = false;
+	//			break;
+	//		}
+	//	}
+
+	//	if (isPrime)
+	//	{
+	//		sum += i;
+	//		if (min == 0)
+	//			min = i;
+	//	}
+	//}
+	//if (min == 0)
+	//	printf("-1");
+	//else
+	//	printf("%d\n%d", sum, min);
+	
+	/*int num[5];
+	int sum = 0;
+	for (int i = 0; i < 5; i++)
+	{
+		scanf("%d", &num[i]);
+		sum += num[i];
+	}
+
+	qsort(num, 5, sizeof(int), compare);
+
+	printf("%d\n%d", sum / 5, num[2]);*/
+
+	//int T;
+	//scanf("%d", &T);
+
+	//for (int i = 0; i < T; i++)
+	//{
+	//	int p;
+	//	scanf("%d", &p);
+	//	int P = p * p;
+	//	char origin[5];
+	//	char copyed[8];
+	//	sprintf(origin, "%d", p);
+	//	sprintf(copyed, "%d", P);
+	//	int len_copyed = strlen(copyed);
+	//	int len_origin = strlen(origin);
+
+	//	if (strcmp(origin, &copyed[len_copyed - len_origin]) == 0)
+	//		printf("YES\n");
+	//	else
+	//		printf("NO\n");
+	//}
+
+	//while (1)
+	//{
+	//	int N;
+	//	scanf("%d", &N);
+
+	//	if (N == 0)
+	//		return 0;
+
+	//	int sum = 0;
+
+	//	while (1)
+	//	{
+	//		if (digitsum(N) < 10)
+	//		{
+	//			sum = digitsum(N);
+	//			break;
+	//		}
+	//		else
+	//			N = digitsum(N);
+	//	}
+
+	//	printf("%d\n", sum);
+	//}
+	
+	//char S[21];
+
+	//scanf("%s", S);
+	//int sum = 0;
+	//int len = strlen(S);
+	//bool isPrime = true;
+
+	//for (int i = 0; i < len; i++)
+	//{
+	//	if (S[i] >= 97)
+	//		sum += (S[i] - 96);
+	//	else
+	//		sum += (S[i] - 64);
+	//}
+	//
+	//if (sum == 1)
+	//	isPrime = true;
+	//else
+	//{
+	//	for (int i = 2; i < sum; i++)
+	//	{
+	//		if (sum % i == 0)
+	//		{
+	//			isPrime = false;
+	//			break;
+	//		}
+	//	}
+	//}
+
+	//if (isPrime)
+	//	printf("It is a prime word.");
+	//else
+	//	printf("It is not a prime word.");
+
+	//int N;
+	//char chN[7];
+	//scanf("%d", &N);
+	//char* listN = NULL; 
+	//sprintf(chN, "%d", N);
+
+	//for (int i = 1; i <= N; i++)
+	//{
+	//	char num[7];
+	//	sprintf(num, "%d", i);
+	//	int len_num = strlen(num);
+
+	//	if (listN == NULL)
+	//	{
+	//		listN = (char*)malloc(len_num+1);
+	//		strcpy(listN, num);
+	//	}
+	//	else
+	//	{
+	//		int len_list = strlen(listN);
+	//		listN = (char*)realloc(listN, len_list + len_num + 1);
+	//		strcat(listN, num);
+	//	}
+	//}
+	//char *pos = strstr(listN, chN);
+	//int index = pos - listN;
+	//printf("%d", index+1);
+	//free(listN);
+
+//while (1)
+//{
+//	int N, P;
+//	int page[4] = { 0 };
+//	int result = scanf("%d", &N);
+//
+//	if (result == 1 && N == 0)
+//		return 0;
+//
+//	result = scanf("%d", &P);
+//
+//	if (P > N / 2)
+//	{
+//		if (P % 2 != 0)
+//		{
+//			page[0] = N - P;
+//			page[1] = N - P + 1;
+//			page[2] = P;
+//			page[3] = P + 1;
+//		}
+//		else
+//		{
+//			page[0] = N - P + 1;
+//			page[1] = N - P + 2;
+//			page[2] = P - 1;
+//			page[3] = P;
+//		}
+//	}
+//	else
+//	{
+//		if (P % 2 != 0)
+//		{
+//			page[0] = P;
+//			page[1] = P + 1;
+//			page[2] = N - P;
+//			page[3] = N - P + 1;
+//		}
+//		else
+//		{
+//			page[0] = P - 1;
+//			page[1] = P;
+//			page[2] = N - P + 1;
+//			page[3] = N - P + 2;
+//		}
+//	}
+//
+//
+//	for (int i = 0; i < 4; i++)
+//	{
+//		if (page[i] != P)
+//			printf("%d ", page[i]);
+//	}
+//	printf("\n");
+	
+
+	//int Case;
+	//scanf("%d", &Case);
+
+	//for (int i = 0; i < Case; i++)
+	//{
+	//	int N, M;
+	//	scanf("%d %d", &N, &M);
+
+	//	int T = N - M;
+	//	int U = 2 * M - N;
+
+	//	printf("%d %d\n", U, T);
+	//}
+
+	
+	// 1 2 
 }
 
 
