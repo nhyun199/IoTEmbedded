@@ -209,7 +209,6 @@ int sumOfDigit(int num)
 	return sum;
 }
 
-
 typedef struct
 {
 	int age;
@@ -2761,7 +2760,108 @@ int main()
 	//}
 
 	
-	// 1 2 
+	// 1 2
+	
+	//int score[6];
+	//int sum;
+	//int max;
+	//int min;
+
+	//while (1)
+	//{
+	//	sum = 0; max = -1; min = 11;
+
+	//	for (int i = 0; i < 6; i++)
+	//	{
+	//		scanf("%d", &score[i]);
+	//		sum += score[i];
+
+	//		if (max < score[i])
+	//			max = score[i];
+	//		if (min > score[i])
+	//			min = score[i];
+	//	}
+
+	//	if (sum == 0)
+	//		return 0;
+
+	//	sum -= (max + min);
+
+	//	printf("%g\n", sum / (double)4);
+	//}
+
+	//char H[100001];
+	//char N[11];
+	//scanf("%s %s", H, N);
+
+	//int count = 0;
+	//char* find = strstr(H, N);
+
+	//while (find != NULL)
+	//{
+	//	count++;
+	//	find = strstr(find + 1, N);
+	//}
+
+	//printf("%d", count);
+	
+
+	//int T;
+	//int n;
+	//int* B = NULL;
+	//scanf("%d", &T);
+
+	//// l = 2 4 8 16 32
+	//// k = 6, B[6] = 6, l = 2, 
+	//for (int i = 0; i < T; i++)
+	//{
+	//	scanf("%d", &n);
+	//	n++;
+	//	B = (int*)malloc(n * sizeof(int));
+	//	
+	//	for (int j = 1; j < n; j++)
+	//		B[j] = j;
+
+
+	//	for (int k = 1; k < n; k++)
+	//	{
+	//		int l;
+	//		int ex = 0;
+
+	//		if (B[k] % 2 != 0)
+	//			continue;
+	//		
+	//		while (1)
+	//		{
+	//			int POW = (int)pow(2, ex);
+	//			if (B[k] % POW == 0)
+	//			{
+	//				l = POW;
+	//				ex++;
+	//			}
+	//			else
+	//				break;
+	//		}
+
+	//		if (k != l)
+	//		{
+	//			int temp = B[k];
+	//			B[k] = B[l];
+	//			B[l] = temp;
+	//		}
+	//	}
+
+	//	for (int a = 1; a < n; a++)
+	//	{
+	//		if (B[a] == 1)
+	//		{
+	//			printf("%d", a);
+	//			break;
+	//		}
+	//	}
+	//}
+	
+	
 }
 
 
