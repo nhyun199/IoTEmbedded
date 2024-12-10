@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "qapplication": "cpp",
+        "qpushbutton": "cpp",
+        "functional": "cpp",
+        "qtcpserver": "cpp"
+    }
+}

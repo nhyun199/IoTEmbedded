@@ -1,19 +1,21 @@
 #include <algorithm>
 #include <cctype>
 #include <chrono>
+#include <climits>
 #include <cmath>
+#include <cstdio>
+#include <cstring>
 #include <iomanip>
 #include <iostream>
 #include <map>
 #include <numeric>
+#include <numeric>
+#include <set>
 #include <sstream>
 #include <string>
+#include <unordered_set>
 #include <vector>
 #include <Windows.h>
-#include <set>
-#include <numeric>
-#include <unordered_set>
-#include <climits>
 //int board[1002][1002];
 
 using namespace std;
@@ -2152,18 +2154,23 @@ int main()
 	else
 		cout << X;*/
 
-	string A, B;
-	cin >> A >> B;
-	int n = A.size();
-	int m = B.size();
-	int result = 0;
+	//string A, B;
+	//cin >> A >> B;
+	//int n = A.size();
+	//int m = B.size();
+	//int result = 0;
 
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < m; j++)
-		{
-			result += (A[i] - '0')*(B[j] - '0');
-		}
-	}
-	cout << result;
+	//for (int i = 0; i < n; i++)
+	//{
+	//	for (int j = 0; j < m; j++)
+	//	{
+	//		result += (A[i] - '0')*(B[j] - '0');
+	//	}
+	//}
+	//cout << result;
+	printf("제품번호 : %-2d  제품명 : %-25s    수량 : %3lu개  금액 : %8lu원\n", 0, "메가리카노", 5, 15000);
+	printf("제품번호 : %-2d  제품명 : %-25s    수량 : %3lu개  금액 : %8lu원\n", 1, "산타 코코넛 애플티 라떼", 10, 150000);
+	printf("제품번호 : %-2d  제품명 : %-25s    수량 : %3lu개  금액 : %8lu원\n", 2, "카페라떼", 5, 4500);
+	printf("제품번호 : %-2d  제품명 : %-25s    수량 : %3lu개  금액 : %8lu원\n", 10, "딸기초코프라페", 5, 4500);
+
 }	

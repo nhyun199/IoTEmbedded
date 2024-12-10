@@ -1,0 +1,2 @@
+
+void BubbleSort(int *array, int size);

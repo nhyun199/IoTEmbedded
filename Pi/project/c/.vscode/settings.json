@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "sll_list.h": "c",
+        "stdbool.h": "c",
+        "queue.h": "c",
+        "circularqueue.h": "c",
+        "stdlib.h": "c",
+        "stdarg.h": "c",
+        "tree_expression.h": "c"
+    }
+}
